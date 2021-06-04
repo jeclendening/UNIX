@@ -1,0 +1,27 @@
+##############################################################################
+### Script Name: ftpbuildlist_prod
+###
+### Modify for your purpose.  Run to setup a list of file names in
+### the "ftpinlist" file to be used as input to the script "ftpgetlist"
+### or "ftpputlist".
+### The "ftpinlist" file should be placed in the same directory as
+### the "ftpgetlist" or "ftpputlist" script after it is created, which is
+### usually:
+### /usr17/local/development/bin on the T600 and
+### /usr37/local/development/bin on the K460
+###
+##############################################################################
+#
+rm -f ftpinlist_prod_o
+#
+cd /usr37/local/development/reports/outputs
+#
+#for i in `ls jec_zma82p2.me0310`
+#
+for i in `ls zma*`
+#
+do
+    echo $i >> /usr37/local/development/bin/ftpinlist_prod_o
+done
+#
+cd /usr37/local/development/bin  

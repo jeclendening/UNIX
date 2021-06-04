@@ -1,0 +1,4 @@
+cut -c 118-118 zmd42a1.me0309 >jec_orig_cat
+sort jec_orig_cat |uniq -c >jec_orig_cat_1
+#cut -c 45-45 zmd42a1.me0309 >jec_orig_cat
+#sort jec_orig_cat |uniq -c >jec_orig_cat_1

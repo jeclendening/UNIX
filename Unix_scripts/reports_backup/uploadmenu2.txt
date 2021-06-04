@@ -1,0 +1,200 @@
+#/usr/bin/ksh
+# @(#)simple menu-upd 2002
+#
+invalid_option()
+{
+OPTION=${OPTION:=Enter}
+echo "$MSG '$OPTION' is an invalid option, please enter a valid option!\c"
+} # (end invalid_option)
+#
+#
+set_variables()
+{
+export EXEC=$REGION/$SYSNAME/inputs
+export OUTFILE=$REGION/$SYSNAME/log/$PROCNAME.out
+export ERRFILE=$REGION/$SYSNAME/log/$PROCNAME.err
+export PROCNAME
+} # (end set_variables)
+#
+#
+run_script()
+{
+for f in $*
+do
+  valid="yes"
+  if (test "$report" = monthly)
+  then
+   case $f in
+     1) PROCNAME=ftpput28a ;;
+     2) PROCNAME=ftpput32a ;;
+     3) PROCNAME=ftpput33a ;;
+     4) PROCNAME=ftpput35a ;;
+     5) PROCNAME=ftpput36a ;;
+     6) PROCNAME=ftpput37a ;;
+     7) PROCNAME=ftpput37b ;;
+     8) PROCNAME=ftpput38a ;;
+     9) PROCNAME=ftpput39a ;;
+     10) PROCNAME=ftpput13a ;;
+     11) PROCNAME=ftpput13b ;;
+     12) PROCNAME=ftpput13c ;;
+     13) PROCNAME=ftpput13d ;;
+     14) PROCNAME=ftpput13e ;;
+     15) PROCNAME=ftpput13f ;;
+     16) PROCNAME=ftpput13g ;;
+     17) PROCNAME=ftpput13h ;;
+     18) PROCNAME=ftpput13i ;;
+     19) PROCNAME=ftpput13k ;;
+     20) PROCNAME=ftpput13l ;;
+     21) PROCNAME=ftpput13m ;;
+     22) PROCNAME=ftpput13p ;;
+     23) PROCNAME=ftpput13q ;;
+     24) PROCNAME=ftpput13r ;;
+     25) PROCNAME=ftpput13s ;;
+     26) PROCNAME=ftpput13u ;;
+     27) PROCNAME=ftpput13v ;;
+     28) PROCNAME=ftpput140 ;;
+     29) PROCNAME=ftpput141 ;;
+     30) PROCNAME=ftpput142 ;;
+     31) PROCNAME=ftpput143 ;;
+     32) PROCNAME=ftpput144 ;;
+     33) PROCNAME=ftpput174 ;;
+     34) PROCNAME=ftpput175 ;;
+     35) PROCNAME=ftpput182 ;;
+     36) PROCNAME=ftpput183 ;;
+     37) PROCNAME=ftpput184 ;;
+     38) PROCNAME=ftpput185 ;;
+     39) PROCNAME=ftpput186 ;;
+     40) PROCNAME=ftpput187 ;;
+     41) PROCNAME=ftpput189 ;;
+     42) PROCNAME=ftpput18a ;;
+     43) PROCNAME=ftpput18b ;;
+     44) PROCNAME=ftpput18c ;;
+     45) PROCNAME=ftpput18d ;;
+     *) valid="no"
+   esac
+  fi
+############################################################
+if (test "$valid" = yes)
+then
+set_variables
+   1>$OUTFILE
+   2>$ERRFILE
+   echo ' ' >>$OUTFILE
+   date >>$OUTFILE
+   echo ' ' >>$OUTFILE
+   echo '*****************************************' >>$OUTFILE
+   echo '    THIS IS THE START OF '$PROCNAME >>$OUTFILE
+   echo '*****************************************' >>$OUTFILE
+   echo ' ' >>$OUTFILE
+   $EXEC/$PROCNAME 1>>$OUTFILE 2>>$ERRFILE
+   cat $ERRFILE >> $OUTFILE
+   echo ' ' >>$OUTFILE
+   echo '*****************************************' >>$OUTFILE
+   echo '    THIS IS THE END OF '$PROCNAME >>$OUTFILE
+   echo '*****************************************' >>$OUTFILE
+   echo ' ' >>$OUTFILE
+   date >>$OUTFILE
+   echo ' ' >>$OUTFILE
+   vi $OUTFILE
+   RTNCODE=$?;export RTNCODE
+else
+   invalid_option
+fi
+done
+} # (end run_script)
+#######################################################################33
+monthly_menu()
+{
+menu1="
+
+
+
+                                   FTP MENU
+                            
+                         
+       1) FTPPUT28A    10) FTPPUT13A    19) FTPPUT13K    28) FTPPUT140    37) FTPPUT184
+       2) FTPPUT32A    11) FTPPUT13B    20) FTPPUT13L    29) FTPPUT141    38) FTPPUT185
+       3) FTPPUT33A    12) FTPPUT13C    21) FTPPUT13M    30) FTPPUT142    39) FTPPUT186
+       4) FTPPUT35A    13) FTPPUT13D    22) FTPPUT13P    31) FTPPUT143    40) FTPPUT187
+       5) FTPPUT36A    14) FTPPUT13E    23) FTPPUT13Q    32) FTPPUT144    41) FTPPUT189
+       6) FTPPUT37A    15) FTPPUT13F    24) FTPPUT13R    33) FTPPUT174    42) FTPPUT18A
+       7) FTPPUT37B    16) FTPPUT13G    25) FTPPUT13S    34) FTPPUT175    43) FTPPUT18B
+       8) FTPPUT38A    17) FTPPUT13H    26) FTPPUT13U    35) FTPPUT182    44) FTPPUT18C
+       9) FTPPUT39A    18) FTPPUT13I    27) FTPPUT13V    36) FTPPUT183    45) FTPPUT18D  
+
+                               0) Exit
+                              
+
+
+"
+
+while true
+do
+clear
+echo "$menu1"
+  echo "$ESC[20;0H
+Enter Selection:    $ESC[3;D\c"
+
+  read OPTION
+  case $OPTION in
+    0) break
+       ;;
+   "") invalid_option
+       ;;
+    *) run_script $OPTION
+  esac
+done
+} # (end menu)
+#############################################################################
+OBDIR=/opt/cobol/cobdir# points to MicroFocus runtime
+ESC="\033"
+NORM="$ESC[0m"    # screen attributes
+BOLD="$ESC[1m"
+REV="$ESC[0m"
+BLNK="$ESC[0m"
+CURON="$ESC[?25h"
+CUROFF="$ESC[?25l"
+MSG="$ESC[24;0H$ESC[2K" # moves cursor to line 24, clears line
+UTERM=`tty`
+export COBDIR
+export NORM BOLD REV BLNK MSG CURON CUROFF
+umask 0000
+olddir=`pwd`
+echo "$BOLD$CUROFF\c"  # turns off cursor
+menu="
+
+
+                            UPLOADS MENU
+
+                           1) MONTHLY UPLOADS
+
+                           0) EXIT
+
+
+"
+clear
+echo "$menu"
+
+while true
+do
+  echo "$ESC[21;0H
+Enter Selection:   $ESC[2;D\c"
+
+  read OPTION
+  case $OPTION in
+    0) break
+       ;;
+    1)report=monthly
+       monthly_menu
+       clear
+       echo "$menu"
+       ;;
+    *) invalid_option
+  esac
+done
+
+cd $olddir
+clear
+echo "$NORM"
+echo "$CURON$NORM"     # turn on cursor, reset attributes
+

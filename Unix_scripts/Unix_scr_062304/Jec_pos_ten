@@ -1,0 +1,4 @@
+cut -c 118-118 zmd42a1.andy >jec_andy_cat
+sort jec_andy_cat |uniq -c >jec_andy_cat_1
+#cut -c 45-45 zmd42a1.andy >jec_andy_cat
+#sort jec_andy_cat |uniq -c >jec_andy_cat_1

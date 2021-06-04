@@ -1,0 +1,349 @@
+#/usr/bin/ksh
+# @(#)simple menu-upd 2002
+#
+invalid_option()
+{
+OPTION=${OPTION:=Enter}
+echo "$MSG '$OPTION' is an invalid option, please enter a valid option!\c"
+} # (end invalid_option)
+#
+#
+set_variables()
+{
+export EXEC=$REGION/$SYSNAME/inputs
+export OUTFILE=$REGION/$SYSNAME/log/$PROCNAME.out
+export ERRFILE=$REGION/$SYSNAME/log/$PROCNAME.err
+export PROCNAME
+} # (end set_variables)
+#
+#
+run_script()
+{
+for f in $*
+do
+  valid="yes"
+  if (test "$report" = monthly)
+  then
+   case $f in
+     A) PROCNAME=ftpput126 ;;
+     B) PROCNAME=ftpput127 ;;
+     C) PROCNAME=ftpput128 ;;
+     D) PROCNAME=ftpput129 ;;
+     E) PROCNAME=ftpput130 ;;
+     1) PROCNAME=ftpput131 ;;
+     2) PROCNAME=ftpput132 ;;
+     3) PROCNAME=ftpput133 ;;
+     4) PROCNAME=ftpput135 ;;
+     5) PROCNAME=ftpput136 ;;
+     6) PROCNAME=ftpput137 ;;
+     7) PROCNAME=ftpputxxx ;;
+     8) PROCNAME=ftpput138 ;;
+     9) PROCNAME=ftpput139 ;;
+     10) PROCNAME=ftpput13a ;;
+     11) PROCNAME=ftpput13b ;;
+     12) PROCNAME=ftpput13c ;;
+     13) PROCNAME=ftpput13d ;;
+     14) PROCNAME=ftpput13e ;;
+     15) PROCNAME=ftpput13f ;;
+     16) PROCNAME=ftpput13g ;;
+     17) PROCNAME=ftpput13h ;;
+     18) PROCNAME=ftpput13i ;;
+     19) PROCNAME=ftpput13k ;;
+     20) PROCNAME=ftpput13l ;;
+     21) PROCNAME=ftpput13m ;;
+     22) PROCNAME=ftpput13p ;;
+     23) PROCNAME=ftpput13q ;;
+     24) PROCNAME=ftpput13r ;;
+     25) PROCNAME=ftpput13s ;;
+     26) PROCNAME=ftpput13t ;;
+     27) PROCNAME=ftpput13u ;;
+     28) PROCNAME=ftpput13v ;;
+     29) PROCNAME=ftpput140 ;;
+     30) PROCNAME=ftpput141 ;;
+     31) PROCNAME=ftpput142 ;;
+     32) PROCNAME=ftpput143 ;;
+     33) PROCNAME=ftpput144 ;;
+     34) PROCNAME=ftpput174 ;;
+     35) PROCNAME=ftpput175 ;;
+     36) PROCNAME=ftpputxxx ;;
+     37) PROCNAME=ftpput183 ;;
+     38) PROCNAME=ftpput184 ;;
+     39) PROCNAME=ftpput185 ;;
+     40) PROCNAME=ftpput186 ;;
+     41) PROCNAME=ftpput187 ;;
+     42) PROCNAME=ftpput189 ;;
+     43) PROCNAME=ftpput18a ;;
+     44) PROCNAME=ftpput18b ;;
+     45) PROCNAME=ftpput18c ;;
+     46) PROCNAME=ftpput18d ;;
+     47) PROCNAME=ftpputa2b ;;
+     48) PROCNAME=ftpput82c ;;
+     49) PROCNAME=ftpput82d ;;
+     50) PROCNAME=ftpput82e ;;
+     51) PROCNAME=ftpput82f ;;
+     52) PROCNAME=ftpput82g ;;
+     53) PROCNAME=ftpput82j ;;
+     54) PROCNAME=ftpput82k ;;
+     55) PROCNAME=ftpput82m ;;
+     56) PROCNAME=ftpput82p ;;
+     57) PROCNAME=ftpput82q ;;
+     58) PROCNAME=ftpputxxx ;;
+     59) PROCNAME=ftpputxxx ;;
+     60) PROCNAME=ftpputxxx ;;
+     *) valid="no"
+   esac
+  elif (test "$report" = quarterly)
+  then
+   case $f in
+     1) PROCNAME=ftpput110 ;;
+     2) PROCNAME=ftpput111 ;;
+     3) PROCNAME=ftpput112 ;;
+     4) PROCNAME=ftpput113 ;;
+     5) PROCNAME=ftpput114 ;;
+     6) PROCNAME=ftpput115 ;;
+     7) PROCNAME=ftpput150 ;;
+     8) PROCNAME=ftpput151 ;;
+     9) PROCNAME=ftpput152 ;;
+     10) PROCNAME=ftpput153 ;;
+     11) PROCNAME=ftpput154 ;;
+     12) PROCNAME=ftpput155 ;;
+     13) PROCNAME=ftpput56a ;;
+     14) PROCNAME=ftpput56b ;;
+     15) PROCNAME=ftpput157 ;;
+     16) PROCNAME=ftpput58a ;;
+     17) PROCNAME=ftpput58c ;;
+     18) PROCNAME=ftpput58d ;;
+     19) PROCNAME=ftpput58e ;;
+     20) PROCNAME=ftpput159 ;;
+     21) PROCNAME=ftpput15a ;;
+     22) PROCNAME=ftpput15b ;;
+     23) PROCNAME=ftpputxxx ;;
+     24) PROCNAME=ftpput5da ;;
+     25) PROCNAME=ftpput5db ;;
+     26) PROCNAME=ftpput15e ;;
+     27) PROCNAME=ftpput15f ;;
+     28) PROCNAME=ftpput15g ;;
+     29) PROCNAME=ftpput5ha ;;
+     30) PROCNAME=ftpput5hb ;;
+     31) PROCNAME=ftpput15i ;;
+     32) PROCNAME=ftpput15j ;;
+     33) PROCNAME=ftpput15k ;;
+     34) PROCNAME=ftpput15l ;;
+     35) PROCNAME=ftpput15m ;;
+     36) PROCNAME=ftpput5na ;;
+     37) PROCNAME=ftpput5nb ;;
+     38) PROCNAME=ftpput5nc ;;
+     39) PROCNAME=ftpput5nd ;;
+     40) PROCNAME=ftpput5ne ;;
+     41) PROCNAME=ftpput5nf ;;
+     42) PROCNAME=ftpput5ng ;;
+     43) PROCNAME=ftpput5ra ;;
+     44) PROCNAME=ftpput5rb ;;
+     45) PROCNAME=ftpput15t ;;
+     46) PROCNAME=ftpput15u ;;
+     47) PROCNAME=ftpput15w ;;
+     48) PROCNAME=ftpputxxx ;;
+     49) PROCNAME=ftpput5ya ;;
+     50) PROCNAME=ftpput5yb ;;
+     51) PROCNAME=ftpput5za ;;
+     52) PROCNAME=ftpput5zb ;;
+     53) PROCNAME=ftpput5zc ;;
+     54) PROCNAME=ftpput61a ;;
+     55) PROCNAME=ftpput61b ;;
+     56) PROCNAME=ftpput62a ;;
+     57) PROCNAME=ftpput62b ;;
+     58) PROCNAME=ftpput62c ;;
+     59) PROCNAME=ftpput62d ;;
+     60) PROCNAME=ftpput62e ;;
+     61) PROCNAME=ftpput64a ;;
+     62) PROCNAME=ftpput64b ;;
+     63) PROCNAME=ftpput64c ;;
+     64) PROCNAME=ftpput64d ;;
+     65) PROCNAME=ftpput64e ;;
+     *) valid="no"
+   esac
+  fi
+############################################################
+if (test "$valid" = yes)
+then
+   set_variables
+   1>$OUTFILE
+   2>$ERRFILE
+   echo ' ' >>$OUTFILE
+   date >>$OUTFILE
+   echo ' ' >>$OUTFILE
+   echo '*****************************************' >>$OUTFILE
+   echo '    THIS IS THE START OF '$PROCNAME >>$OUTFILE
+   echo '*****************************************' >>$OUTFILE
+   echo ' ' >>$OUTFILE
+   $EXEC/$PROCNAME 1>>$OUTFILE 2>>$ERRFILE
+   cat $ERRFILE >> $OUTFILE
+   echo ' ' >>$OUTFILE
+   echo '*****************************************' >>$OUTFILE
+   echo '    THIS IS THE END OF '$PROCNAME >>$OUTFILE
+   echo '*****************************************' >>$OUTFILE
+   echo ' ' >>$OUTFILE
+   date >>$OUTFILE
+   echo ' ' >>$OUTFILE
+   vi $OUTFILE
+   RTNCODE=$?;export RTNCODE
+else
+   invalid_option
+fi
+done
+} # (end run_script)
+##########################################################################
+monthly_menu()
+{
+menu1="
+
+
+                           MONTHLY FTP MENU
+                            
+
+       A) FTPPUT126    B) FTPPUT127     C) FTPPUT128     D) FTPPUT129     E) FTPPUT130
+       1) FTPPUT131    11) FTPPUT13B    21) FTPPUT13M    31) FTPPUT142    41) FTPPUT187
+       2) FTPPUT132    12) FTPPUT13C    22) FTPPUT13P    32) FTPPUT143    42) FTPPUT189
+       3) FTPPUT133    13) FTPPUT13D    23) FTPPUT13Q    33) FTPPUT144    43) FTPPUT18A
+       4) FTPPUT135    14) FTPPUT13E    24) FTPPUT13R    34) FTPPUT174    44) FTPPUT18B
+       5) FTPPUT136    15) FTPPUT13F    25) FTPPUT13S    35) FTPPUT175    45) FTPPUT18C
+       6) FTPPUT137    16) FTPPUT13G    26) FTPPUT13T    36) FTPPUT82C    46) FTPPUT18D
+       7) FTPPUTXXX    17) FTPPUT13H    27) FTPPUT13U    37) FTPPUT183    47) FTPPUTA2B
+       8) FTPPUT138    18) FTPPUT13I    28) FTPPUT13V    38) FTPPUT184    48) FTPPUT82C
+       9) FTPPUT139    19) FTPPUT13K    29) FTPPUT140    39) FTPPUT185    49) FTPPUT82D 
+       10) FTPPUT13A   20) FTPPUT13L    30) FTPPUT141    40) FTPPUT186    50) FTPPUT82E
+       51) FTPPUT82F   52) FTPPUT82G    53) FTPPUT82J    54) FTPPUT82K    55) FTPPUT82M
+       56) FTPPUT82P   57) FTPPUTXXQ    58) FTPPUTXXX    59) FTPPUTXXX    60) FTPPUTXXX
+
+                                0) Exit
+                              
+
+
+"
+
+while true
+do
+clear
+echo "$menu1"
+  echo "$ESC[20;0H
+Enter Selection:    $ESC[3;D\c"
+
+  read OPTION
+  case $OPTION in
+    0) break
+       ;;
+   "") invalid_option
+       ;;
+    *) run_script $OPTION
+  esac
+done
+} # (end monthly_menu)
+################################################################################
+#                             quarterly_menu
+#
+# Called by selecting option 2 in the main_menu.
+################################################################################
+quarterly_menu()
+{
+menu2="
+                    
+     
+                             Quarterly FTP MENU
+
+   1) FTPPUT110  13) FTPPUT56A   25) FTPPUT5DB   37) FTPPUT5NB   49) FTPPUT5YA  61) FTPPUT64A 
+   2) FTPPUT111  14) FTPPUT56B   26) FTPPUT15E   38) FTPPUT5NC   50) FTPPUT5YB  62) FTPPUT64B
+   3) FTPPUT112  15) FTPPUT157   27) FTPPUT15F   39) FTPPUT5ND   51) FTPPUT5ZA  63) FTPPUT64C
+   4) FTPPUT113  16) FTPPUT58A   28) FTPPUT15G   40) FTPPUT5NE   52) FTPPUT5ZB  63) FTPPUT64D
+   5) FTPPUT114  17) FTPPUT58C   29) FTPPUT5HA   41) FTPPUT5NF   53) FTPPUT5ZC  65) FTPPUT64E
+   6) FTPPUT115  18) FTPPUT58D   30) FTPPUT5HB   42) FTPPUT5NG   54) FTPPUT61A  66) FTPXXXXXX
+   7) FTPPUT150  19) FTPPUT58E   31) FTPPUT15I   43) FTPPUT5RA   55) FTPPUT61B  67) FTPXXXXXX
+   8) FTPPUT151  20) FTPPUT159   32) FTPPUT15J   44) FTPPUT5RB   56) FTPPUT62A  68) FTPXXXXXX
+   9) FTPPUT152  21) FTPPUT15A   33) FTPPUT15K   45) FTPPUT15T   57) FTPPUT62B  69) FTPXXXXXX
+  10) FTPPUT1XX  22) FTPPUT15B   34) FTPPUT15L   46) FTPPUT15U   58) FTPPUT62C  70) FTPXXXXXX
+  11) FTPPUT154  23) FTPPUTXXX   35) FTPPUT15M   47) FTPPUT15W   59) FTPPUT62D  72) FTPXXXXXX
+  12) FTPPUT155  24) FTPPUT5DA   36) FTPPUT5NA   48) FTPPUTXXX   60) FTPPUT62E  73) FTPXXXXXX
+
+                     0) Exit
+
+
+
+
+"
+
+
+while true
+do 
+  clear
+  echo "$menu2"
+  echo "$ESC[20;0H
+Enter Selection:    $ESC[3;D\c"
+
+  read OPTION
+  case $OPTION in
+    0) break
+       ;;
+   "") invalid_option
+       ;;
+    *) run_script $OPTION
+  esac
+done
+} # (end quarterly_menu)
+#############################################################################
+OBDIR=/opt/cobol/cobdir# points to MicroFocus runtime
+ESC="\033"
+NORM="$ESC[0m"    # screen attributes
+BOLD="$ESC[1m"
+REV="$ESC[0m"
+BLNK="$ESC[0m"
+CURON="$ESC[?25h"
+CUROFF="$ESC[?25l"
+MSG="$ESC[24;0H$ESC[2K" # moves cursor to line 24, clears line
+UTERM=`tty`
+export COBDIR
+export NORM BOLD REV BLNK MSG CURON CUROFF
+umask 0000
+olddir=`pwd`
+echo "$BOLD$CUROFF\c"  # turns off cursor
+menu="
+
+
+                            UPLOADS MENU
+
+                           1) MONTHLY FTP'S
+                           2) QUARTERLY FTP'S
+
+                           0) EXIT
+
+
+"
+clear
+echo "$menu"
+
+while true
+do
+  echo "$ESC[21;0H
+Enter Selection:   $ESC[2;D\c"
+
+  read OPTION
+  case $OPTION in
+    0) break
+       ;;
+    1)report=monthly
+       monthly_menu
+       clear
+       echo "$menu"
+       ;;
+    2)report=quarterly
+       quarterly_menu
+       clear
+       echo "$menu"
+       ;;
+    *) invalid_option
+  esac
+done
+
+cd $olddir
+clear
+echo "$NORM"
+echo "$CURON$NORM"     # turn on cursor, reset attributes
+

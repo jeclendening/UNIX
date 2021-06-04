@@ -1,0 +1,53 @@
+#### Do not Delete used by reports_menu ############
+####
+clear
+echo "ASOFCUR is CURRENTLY set to " $asofcur
+echo "ASOFPRV is CURRENTLY set to " $asofprv
+echo "ASOFOTH is CURRENTLY set to " $asofoth
+echo "ASOFCYC is CURRENTLY set to " $asofcyc
+echo "ASOFCSD is CURRENTLY set to " $asofcsd
+echo "PRINTER IS CURRENTLY SET TO " $PRINTER
+asofcur2=$asofcur
+asofprv2=$asofprv
+asofoth2=$asofoth
+asofcyc2=$asofcyc
+asofcsd2=$asofcsd
+PRINTER2=$PRINTER
+echo
+echo "Enter New Value for ASOFCUR, or [RETURN] for CURRENT VALUE: \c"
+read asofcur
+if [ "$asofcur" != "" ]
+ then
+     export asofcur
+ else
+     asofcur=$asofcur2; export asofcur 
+fi 
+echo "Enter NEW VALUE for ASOFPRV, or [RETURN] for CURRENT VALUE: \c"
+read asofprv 
+if [ "$asofprv" != "" ]
+ then
+    export asofprv
+ else
+     asofprv=$asofprv2;export asofcur
+fi
+echo "Enter NEW VALUE for ASOFCSD, or [RETURN] for CURRENT VALUE: \c"
+read asofcsd
+if [ "$asofcsd" != "" ]
+ then
+     export asofcsd
+ else 
+     asofcsd=$asofcsd2;export asofcsd
+fi
+echo "Enter NEW VALUE for ASOFCYC, or [RETURN] for CURRENT VALUE: \c"
+read asofcyc
+if [ "$asofcyc" != "" ]
+ then
+     export asofcyc
+ else
+     asofcyc=$asofcyc2;export asofcyc
+fi
+
+echo "ASOFCUR is NOW set to " $asofcur
+echo "ASOFPRV is NOW set to " $asofprv
+echo "ASOFCSD is NOW set to " $asofcsd
+echo "ASOFCYC is NOW set to " $asofcyc

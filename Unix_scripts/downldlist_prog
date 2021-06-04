@@ -1,0 +1,68 @@
+cd /hqacpers/reports/inputs
+quit=n
+while test "$quit" = "n"
+do 
+ clear
+ echo "             Todays Date: `date`                                      "
+ echo "             user:  `who am i`                                        "
+ echo " 1. Wc -l  > Inputs Dir                                               "
+ echo " 2  Wc -l  > Extracts Dir                                             "  
+ echo " 3  display                                                           "
+ echo " Q. Quit                                                              "
+ echo "______________________________________________________________________________________"
+ echo "---------------------------------------------------------------------------------------"
+ echo " Monthly         |     Quarterly           |    Special           |   Extracts       "
+ echo " zmd33a1.$asofcur <------>zmd52a1.$asofcur<-----> zmd32a4 <----------> zma26x2.$asofcur"
+ echo " zmd33b1.$asofcur <------>zmd59b1.$asofcur<-----> zmd40b1 <----------> zma26x3.$asofcur"
+ echo " zmd35a3.$asofcur <------>newacq01.$asofcur<----> zmd57u1 <----------> zma37x1.$asofcur"
+ echo " zmd35b2.$asofcur <------>zmd8aa1.$asofcur<-----> zmd59a1.$asofcyc <---> zma37x2.$asofcur"
+ echo " zmd36a3.$asofcur <---------------------------> bkcet170.$asofcsd <> zma34f1.$asofcur"
+ echo " zmd40a1.$asofcur <-----Annual ---------------> zma31n1.$asofcur <---> zma34g1.$asofcur"
+ echo " zmd41a1.$asofcur <---------------------------> abfjacq.$asofcur <---> zma83a3.$asofcur"
+ echo " zmd41a2.$asofcur <------>zmd59c1.$asofcur<-----> abfjet.$asofcur <---->bkcet170mnth.$asofcsd"
+ echo " zmd42a1.$asofcur <------>zmd51a1.$asofcur<-----> abfcipm.$asofcur <--->bkctg171.$asofcsd"
+ echo " zmd57a1.$asofcur <---------------------------> zma01a7.$asofcur <--->bkcsc177.$asofcsd"
+ echo " zmd59a1.$asofcur <----->Fegli (OPM & DMDC)---> zmd35b1.$asofcur <--->bkcsd177.$asofcsd " 
+ echo " zmd70a3.$asofcur <---------------------------> zmdm29a.$asofcsd <->               "
+ echo " zmd73a1.$asofcur <------>zmdecjq.$asofcur <----> zmd36b1.$asofcur <---> zmd36b2.$asofcur"
+ echo "***************************************************************************************"
+ echo " Enter choice: \c"
+ read choice
+ case $choice in
+   1) cd /hqacpers/reports/inputs ; echo "Enter filename: \c"
+     read fil 
+     if [ -r "$fil" -a -f "$fil" -a -s "$fil" ]
+     then 
+	 clear
+         wc -l $fil >>word_cnt.$asofcur
+         echo "count appended to file"
+     else
+        echo "Cannot display $fil"
+     fi
+     /hqacpers/reports/bin2/pause   
+     clear
+     ;; 
+   2) cd /hqacpers/reports/extracts ; echo "Enter filename: \c"
+      read fil 
+      if [ -r "$fil" -a -f "$fil" -a -s "$fil" ]
+      then 
+	  clear
+          wc -l $fil >>word_cnt.$asofcur
+          echo "count appended to file"
+      else
+         echo "Cannot display $fil"
+      fi
+      cd /hqacpers/reports/inputs
+      /hqacpers/reports/bin2/pause
+      clear
+     ;;
+   3) cd /hqacpers/reports/inputs
+      vi word_cnt.$asofcur
+      ;;
+   Q|q) quit=y
+     ;;
+   *) echo "Invalid choice!\07\07"
+     /hqacpers/reports/bin2/pause
+ esac
+done
+

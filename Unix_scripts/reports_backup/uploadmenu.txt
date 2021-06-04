@@ -1,0 +1,171 @@
+#/usr/bin/ksh
+# @(#)simple menu-upd 2002
+#
+invalid_option()
+{
+OPTION=${OPTION:=Enter}
+echo "$MSG '$OPTION' is an invalid option, please enter a valid option!\c"
+} # (end invalid_option)
+#
+#
+set_variables()
+{
+export EXEC=$REGION/$SYSNAME/tapes
+export OUTFILE=$REGION/$SYSNAME/log/$PROCNAME.out
+export ERRFILE=$REGION/$SYSNAME/log/$PROCNAME.err
+export PROCNAME
+} # (end set_variables)
+#
+#
+run_script()
+{
+for f in $*
+do
+  valid="yes"
+  if (test "$report" = monthly)
+  then
+   case $f in
+     1) PROCNAME=ftpput26x2 ;;
+     2) PROCNAME=ftpput26x3 ;;
+     3) PROCNAME=ftpput37x1 ;;
+     4) PROCNAME=ftpput37x2 ;;
+     5) PROCNAME=ftpput83a3 ;;
+     6) PROCNAME=ftpput3ia1 ;;
+     7) PROCNAME=ftpput57u1 ;;
+     8) PROCNAME=ftpputdmdc ;;
+     9) PROCNAME=ftpput34g1 ;;
+    10) PROCNAME=ftpput26x2_tst ;;
+    11) PROCNAME=ftpput37x1_o ;;
+    12) PROCNAME=ftpput37x2_o ;;
+    13) PROCNAME=ftpput26x3_all ;;
+     *) valid="no"
+   esac
+  fi
+############################################################
+if (test "$valid" = yes)
+then
+set_variables
+   1>$OUTFILE
+   2>$ERRFILE
+   echo ' ' >>$OUTFILE
+   date >>$OUTFILE
+   echo ' ' >>$OUTFILE
+   echo '*****************************************' >>$OUTFILE
+   echo '    THIS IS THE START OF '$PROCNAME >>$OUTFILE
+   echo '*****************************************' >>$OUTFILE
+   echo ' ' >>$OUTFILE
+   $EXEC/$PROCNAME 1>>$OUTFILE 2>>$ERRFILE
+   cat $ERRFILE >> $OUTFILE
+   echo ' ' >>$OUTFILE
+   echo '*****************************************' >>$OUTFILE
+   echo '    THIS IS THE END OF '$PROCNAME >>$OUTFILE
+   echo '*****************************************' >>$OUTFILE
+   echo ' ' >>$OUTFILE
+   date >>$OUTFILE
+   echo ' ' >>$OUTFILE
+   vi $OUTFILE
+   RTNCODE=$?;export RTNCODE
+else
+   invalid_option
+fi
+done
+} # (end run_script)
+#######################################################################33
+monthly_menu()
+{
+menu1="
+ 
+
+
+
+
+                                   FTP MENU
+                            
+                             
+                             
+          1) FTPPUT26X2   7) FTPPUT57U1      13) FTPPUT26X3_ALL
+          2) FTPPUT26X3   8) FTPPUTDMDC
+          3) FTPPUT37X1   9) FTPPUT34G1
+          4) FTPPUT37X2  10) FTPPUT26X2_TST
+          5) FTPPUT83A3  11) FTPPUT37X1_o
+          6) FTPPUT3IA1  12) FTPPUT37X2_o
+
+          
+          0) Exit
+                              
+
+
+
+
+"
+
+while true
+do
+clear
+echo "$menu1"
+  echo "$ESC[20;0H
+Enter Selection:    $ESC[3;D\c"
+
+  read OPTION
+  case $OPTION in
+    0) break
+       ;;
+   "") invalid_option
+       ;;
+    *) run_script $OPTION
+  esac
+done
+} # (end menu)
+#############################################################################
+OBDIR=/opt/cobol/cobdir# points to MicroFocus runtime
+ESC="\033"
+NORM="$ESC[0m"    # screen attributes
+BOLD="$ESC[1m"
+REV="$ESC[0m"
+BLNK="$ESC[0m"
+CURON="$ESC[?25h"
+CUROFF="$ESC[?25l"
+MSG="$ESC[24;0H$ESC[2K" # moves cursor to line 24, clears line
+UTERM=`tty`
+export COBDIR
+export NORM BOLD REV BLNK MSG CURON CUROFF
+umask 0000
+olddir=`pwd`
+echo "$BOLD$CUROFF\c"  # turns off cursor
+menu="
+
+
+                            UPLOADS MENU
+
+                           1) MONTHLY UPLOADS
+
+                           0) EXIT
+
+
+"
+clear
+echo "$menu"
+
+while true
+do
+  echo "$ESC[21;0H
+Enter Selection:   $ESC[2;D\c"
+
+  read OPTION
+  case $OPTION in
+    0) break
+       ;;
+    1)report=monthly
+       monthly_menu
+       clear
+       echo "$menu"
+       ;;
+    *) invalid_option
+  esac
+done
+
+cd $olddir
+clear
+echo "$NORM"
+echo "$CURON$NORM"     # turn on cursor, reset attributes
+

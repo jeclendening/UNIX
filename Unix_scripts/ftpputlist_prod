@@ -1,0 +1,62 @@
+##############################################################################
+### Script Name:  ftpputlist
+###
+### To run this script:
+### 1) From the command line enter [ftpputlist < ftpinlist ext]
+###    without the brackets, where "ftpinlist" is the list of 
+###    files that you want to transfer, and "ext" is either
+###    "cbl" or "gnt" to indicate source or executable files.
+###    NOTE:  The list of possible "ext" values can be expanded
+###           at any time.
+### 2) The script "ftpbuildlist" should be modified as needed and
+###    run first to setup the files used as input to this script
+###    in the file "ftpinlist" and placed in the same directory
+###    as this script
+###
+### NOTE:  "ftpputlist" is only on the K400 development machine
+###
+### NOTE-2: AT THE LOGIN TYPE YOUR PASSWORD AND HIT ENTER
+##############################################################################
+umask 0000
+ext=$1
+  case $ext in
+    outputs) hostdir=/usr37/local/development/reports/outputs
+             remotedir=/usr17/local/development/reports/outputs
+             ;;
+    log) hostdir=/usr37/local/development/reports/log
+         remotedir=/usr17/local/development/reports/log
+         ;;
+    tapes) hostdir=/usr37/local/development/reports/tapes
+         remotedir=/usr17/local/development/reports/tapes
+         ;;
+    input) hostdir=/usr37/local/development/reports/inputs
+         remotedir=/usr17/local/development/reports/inputs
+         ;;
+    script) hostdir=/usr37/local/development/reports/scripts
+         remotedir=/usr17/local/development/reports/scripts
+         ;;
+    cbl) hostdir=/usr37/local/development/reports/source
+         remotedir=/usr17/local/development/reports/source
+         ;;
+    bin) hostdir=/usr37/local/development/reports/bin
+         remotedir=/usr17/local/development/reports/bin
+         ;;
+    *)  echo "Invalid parameter!!!"
+	exit
+        ;;
+  esac
+cd $hostdir
+beginftp="open 128.190.160.21
+$LOGNAME
+cd $remotedir"
+echo "$beginftp" > tempftp
+while read fname
+do
+  echo "put $fname $fname" >> tempftp
+  echo "chmod 666 $fname" >> tempftp
+done
+endftp="close
+bye"
+echo "$endftp" >> tempftp
+ftp < tempftp
+rm tempftp

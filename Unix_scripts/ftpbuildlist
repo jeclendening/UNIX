@@ -1,0 +1,23 @@
+##############################################################################
+### Script Name: ftpbuildlist
+###
+### Modify for your purpose.  Run to setup a list of file names in
+### the "ftpinlist" file to be used as input to the script "ftpgetlist"
+### or "ftpputlist".
+### The "ftpinlist" file should be placed in the same directory as
+### the "ftpgetlist" or "ftpputlist" script after it is created, which is
+### usually:
+### /usr17/local/development/bin on the T600 and
+### /usr4/local/development/bin on the K460
+###
+##############################################################################
+cd /usr4/local/development/reports/bin
+
+for i in `ls *.gnt`
+do
+  grep 'TO YYYY-FD.' $i > /dev/null
+  if (test "$?" = '0')
+  then
+    echo $i >> ftpinlist2
+  fi
+done

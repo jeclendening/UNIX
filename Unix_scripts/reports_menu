@@ -1,0 +1,230 @@
+#!/bin/ksh
+#
+# @(#)28-choice menu- which include the downloads & runprts menu iupd 2003
+#
+# Script name: reports_menu 
+#    Created By: Jeffrey Clendening
+#    Purpose: Createdas one stop menu process to user control of prod menu's
+#    Date: 
+#----------------------------------------------------------------------------
+#    Modification History
+#      MODIFIED:
+#      CYCLE:
+#      PROGRAMMER:
+#      MODIFICATION:
+#-----------------------------------------------------------------------------
+# Notes:
+#
+#
+#-----------------------------------------------------------------------------
+#
+#
+#
+cd /usr37/local/development/bin
+pause=/usr37/local/development/bin
+quit=n
+prevdir=`pwd`
+dir=predir
+clear
+while test "$quit" = "n"
+do
+  echo 
+  echo "                                MENU                                             "
+  echo "                          CENTRAL PROCESSING                                     "
+  echo "---------------------------------------------------------------------------------"
+  echo "                                                                                 "
+  echo "Your current directory is `pwd`" 
+  echo "                                                                                 "
+  echo " Note: To Display or edit a file you most first Change Directory's   *           "   
+  echo "                                                                                 "
+  echo "  1.    Download Files fron UNX prod box    14. Cat                            * "
+  echo "  2.    Download from Mainframe             15. Pg                             * "  
+  echo "  3.    Runrpts Menu                        16. Head <- view first 10 lines -> * "
+  echo "  4.    Rerunrpts Menu                      17. Tail <- view last 10 lines --> * "
+  echo "  5.    Upload menu                         18. What (must be in Script Dir)   * "
+  echo "  6.    Download List                       19. Calculator ->ctrl-d to exit<-    "
+  echo "  7.    View log files                *     20. Show Date                        "
+  echo "  8.    Change asof variable                21. Show Cal 2003/2004               "
+  echo "  9.    Change Working Directory            22. Show Du                          "
+  echo "  10.   Return to Original Directory        23. Who                              "
+  echo "  11.   List of Available Dir               24. Wc -l                            "
+  echo "  12.   More  <--- Display a File --> *     25. Spell Check                    * "
+  echo "  13    Vi    <--- Edit A File -----> *     26. Df -k                            "
+  echo "  Q.    Quit                                27. Help (sccs)                      " 
+  echo "                                            28. FTPCDRPT                         "
+  echo "---------------------------------------------------------------------------------"
+  echo
+  echo " Enter choice: \c"
+  read  choice
+  case $choice in
+     1) downloads_prod
+        pause
+        clear
+        ;;
+     2) downloads
+        pause
+        clear
+        ;;
+     3) runrpts
+        pause
+        clear
+        ;;
+     4) rerunrpts
+        pause
+        clear
+        ;;
+     5) uploadmenu
+         pause
+         clear ;;
+     6) downldlist
+         pause   
+         clear ;;
+     7)  echo "to vi next lg file Esc shift : n enter key:" ; sleep 003 ;clear ; cd /usr37/local/development/reports/log ; log_all  
+         pause
+         clear ;;
+     8) . set_cycle
+         pause
+         clear ;;
+     9) clear; dirlist ;echo "Enter target directory: \c"
+        read dir
+        if test -d "${dir:=`pwd`}"
+        then
+           cd $dir
+        else
+           echo "$dir: no such directory"
+        fi
+        pause 
+        clear ;;
+     10) clear ; if test "$dir" != "$prevdir"
+        then
+           cd $prevdir
+        fi
+        pause          
+        clear ;;
+     11) dirlist
+         pause
+         clear ;;
+     12) clear ; echo "Enter filename: \c"
+        read fil
+        if [ -r "$fil" -a -f "$fil" -a -s "$fil" ]
+        then
+           clear
+           more -d $fil ;clear ; pause_2
+        else
+           echo "Cannot display $fil"
+        fi
+        pause 
+        clear ;;
+     13) echo "Enter filename: \c"
+        read fil
+        if [ -r "$fil" -a -f "$fil" -a -s "$fil" ]
+        then
+           clear
+           vi $fil
+        else
+           echo "Cannot display $fil"
+        fi
+        pause 
+        clear ;;
+     14) echo "Enter filename: \c"
+        read fil
+        if [ -r "$fil" -a -f "$fil" -a -s "$fil" ]
+        then
+           clear
+           cat $fil
+        else
+           echo "Cannot display $fil"
+        fi
+        pause 
+        clear ;;
+     15) clear ; instructions ; echo "Enter filename: \c"
+        read fil
+        if [ -r "$fil" -a -f "$fil" -a -s "$fil" ]
+        then
+           clear
+          pg $fil 
+        else
+           echo "Cannot display $fil"
+        fi
+        pause 
+        clear ;;
+     16) echo "Enter filename: \c"
+        read fil
+        if [ -r "$fil" -a -f "$fil" -a -s "$fil" ]
+        then
+           clear
+           head -10 $fil | more
+           echo "First 10 lines of the file have been displayed"
+        else
+           echo "Cannot display $fil"
+        fi
+        pause 
+        clear ;;
+     17) echo "Enter filename: \c"
+        read fil
+        if [ -r "$fil" -a -f "$fil" -a -s "$fil" ]
+        then
+           clear
+           tail -10 $fil | more
+           echo "First 10 lines of the file have been displayed"
+        else
+           echo "Cannot display $fil"
+        fi
+        pause 
+        clear ;;
+     18) clear ; what *.ksh | more -d
+         pause
+         clear ;;
+     19) clear ; bc -l
+         pause
+         clear ;;
+     20) clear;echo "Todays Date is";echo ;date ;echo  ;cal
+        pause 
+        clear ;;
+     21) cal 2003 | more ; cal 2004 | more
+        pause 
+        clear ;;
+     22) clear ; du -ak | more -d
+        pause   
+        clear ;; 
+     23) clear ; who -u | more ; echo "  " ; echo " "  ; finger | more ; w |more 
+        pause 
+        clear ;;
+     24) downldlist ; echo "Enter filename: \c"
+        read fil
+        if [ -r "$fil" -a -f "$fil" -a -s "$fil" ]
+        then
+           clear
+            wc -l $fil >>word_cnt.$asofcur
+           echo " count appended to file"
+        else
+           echo "Cannot display $fil"
+        fi
+        pause 
+        clear ;;
+     25) echo "Enter filename: \c"
+         read fil
+         if [ -r "$fil" -a -f "$fil" -a -s "$fil" ]
+         then
+            clear
+             spell $fil 
+         else
+            echo "Cannot display $fil"
+         fi
+         pause 
+         clear ;;
+     26) clear ; df -k /usr37/
+         pause
+         clear ;;
+     27) help     
+         pause
+         clear ;;
+     28) clear ; ftpcdrpt     
+         pause
+         clear ;;
+     Q|q) quit=y;;
+     *) echo "Invalid choice!\07\07"
+     sleep 001  
+     clear;;
+  esac
+done

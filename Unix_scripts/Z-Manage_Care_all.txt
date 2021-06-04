@@ -1,0 +1,6221 @@
+---------------------------                 -------------------------------------
+
+
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------    SXC 3Q08     -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 115063
+WHERE CPR_NUM = 115055
+    AND HFLT_HDR_NUM = 20794
+    AND DFLT_PRODUCT_CODE NOT IN ('00186091612', '00186091706' , '00186091542' );
+
+--Total of 7103 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 19554
+ WHERE CPR_NUM = 115063;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 31
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 1009
+ WHERE CPR_NUM = 115055;
+--Total of 1 row updated
+
+
+
+
+----------------------------- Select 
+
+SELECT  count(*),DFLT_PRODUCT_CODE
+FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE HFLT_HDR_NUM = 20794
+    AND DFLT_PRODUCT_CODE IN (00186091612', '00186091706' , '00186091542')
+Group by DFLT_PRODUCT_CODE;
+
+
+
+
+
+--------------------------- Envision        -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 114650
+WHERE CPR_NUM = 114651
+    AND HFLT_HDR_NUM = 20760;
+
+--Total of 3792 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 5047
+ WHERE CPR_NUM = 114650;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 114651;
+--Total of 1 row updated
+
+
+
+
+
+---------------------------                 -------------------------------------
+--------------------------- Presbyterian    -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 114650
+WHERE CPR_NUM = 114651
+    AND HFLT_HDR_NUM = 20760;
+
+--Total of 3792 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 5047
+ WHERE CPR_NUM = 114650;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 114651;
+--Total of 1 row updated
+
+
+
+
+
+---------------------------                 -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+   SUBM_HDR_NUM = 18329,	
+   HFLT_HDR_NUM = 20575,	
+   CPR_NUM = 113646
+WHERE DFLT_THERP_CLASS_DESC = 'Prilosec Rebate Retail'
+   AND SUBM_HDR_NUM = 18300
+   AND HFLT_HDR_NUM = 20533;
+
+
+--Total of 26625 rows updated
+
+
+
+
+
+
+--------------------------- Presbyterian    -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+       SUBM_HDR_NUM = 18481,	
+        HFLT_HDR_NUM = 20760	
+WHERE HFLT_HDR_NUM = 20758
+   AND   SUBM_HDR_NUM  = 18479;
+   
+--Total of 13352 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+       SUBM_HDR_NUM = 18478,	
+        HFLT_HDR_NUM = 20757	
+WHERE HFLT_HDR_NUM = 20759
+   AND   SUBM_HDR_NUM  = 18480;
+   
+--Total of 5995 rows updated
+
+
+---------------------------    Sierra Commercial --------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 114552
+WHERE CPR_NUM = 114550
+  AND DFLT_DATA_LEVEL = 'PN'
+  AND HFLT_HDR_NUM = 20745;
+--Total of 25 rows updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 248
+ WHERE CPR_NUM = 114552;
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 364
+ WHERE CPR_NUM = 114550;
+--Total of 1 row updated
+
+
+
+
+
+---------------------------   HMSA          -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 114508
+WHERE CPR_NUM = 114506
+  AND DFLT_DATA_LEVEL = 'PN'
+  AND HFLT_HDR_NUM = 20736;
+--Total of 221 rows updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 775
+ WHERE CPR_NUM = 114508;
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 143
+ WHERE CPR_NUM = 114506;
+--Total of 1 row updated
+
+
+
+
+
+---------------------------                 -------------------------------------
+---------------------------  ESI            -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER1 = 'AUGUST 2008 ESI Subsidy lives'
+WHERE HFLT_HDR_NUM = 20659
+  AND DFLT_CUSTOM_FILLER4 = 'S'
+      -- 54221 rows updated
+
+
+
+---------------------------  Medco Symbicort ------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 113666
+WHERE CPR_NUM = 113668
+    AND HFLT_HDR_NUM = 20612;
+
+--Total of 895 rows updated
+
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 19521
+ WHERE CPR_NUM = 113666;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 113668;
+--Total of 1 row updated
+
+--********************************************
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 113665
+WHERE CPR_NUM = 113667
+    AND HFLT_HDR_NUM = 20612;
+
+--Total of 1467 rows updated
+
+
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 49472
+ WHERE CPR_NUM = 113665;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 113667;
+--Total of 1 row updated
+
+
+---------------------------  Medco Crestor ---------------------------------
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'R1318'
+WHERE hflt_hdr_num = 20600
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 318;
+
+-- 7566 rows updated
+
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET DFLT_PLAN_ID_CODE = 'R1318'
+WHERE hflt_hdr_num = 20599
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 318;
+
+-- 272 rows updated
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+        SET DFLT_CUSTOM_FILLER5 = 'BAD RX'
+        WHERE HFLT_HDR_NUM IN (20600)
+          and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+-- 15 rows updated
+---------------------------------------------------------------------------------
+--------------------------- Medco  2Q08     -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+            SET DFLT_CUSTOM_FILLER5 = 'BAD RX'
+            WHERE
+	HFLT_HDR_NUM IN (20566)
+             and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+              -- 10 rows updated
+
+
+
+
+
+SELECT Count(*) FROM RUPSNCPDP_DETAIL_SCRIPT WHERE hflt_hdr_num = 20566
+	AND	length(translate(trim(dflt_prescription_num),' +-.0123456789',' ')) > 0;
+---------------------------------------------------------------------------------
+---------------------------  Health Alliance Medical Plan -----------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 113448
+WHERE CPR_NUM = 113451
+    AND HFLT_HDR_NUM = 20564;
+
+--Total of 8574 rows updated
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 113448
+WHERE CPR_NUM = 113451
+    AND HFLT_HDR_NUM = 20563;
+
+--Total of 49 rows updated
+
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 8796
+ WHERE CPR_NUM = 113448;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 113451;
+--Total of 1 row updated
+
+
+---------------------------------------------------------------------------------
+
+-- CAREMARK RETAIL
+Select * FROM RUPSNCPDP_DETAIL
+WHERE HFLT_HDR_NUM = 20588
+  AND TO_NUMBER(DFLT_CUSTOM_FILLER5) > 29999
+
+-- CAREMARK MAIL
+Select * FROM RUPSNCPDP_DETAIL
+WHERE HFLT_HDR_NUM = 20586
+  AND TO_NUMBER(DFLT_CUSTOM_FILLER5) > 29999;
+
+-- APCS RETAIL
+Select * FROM RUPSNCPDP_DETAIL
+WHERE HFLT_HDR_NUM = 20575
+  AND TO_NUMBER(DFLT_CUSTOM_FILLER5) <= 29999;
+
+
+-- APCS MAIL
+Select * FROM RUPSNCPDP_DETAIL
+WHERE HFLT_HDR_NUM = 20582
+  AND TO_NUMBER(DFLT_CUSTOM_FILLER5) <= 29999;
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------- Caremare/APCS  Nexium -------------------------------
+--Retail
+-- 20575 = 740733
+-- 20574 = 27531
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET HFLT_HDR_NUM = 20575,
+    SUBM_HDR_NUM = 18329
+WHERE HFLT_HDR_NUM = 20588;        
+--Total of 176457 rows updated
+
+UPDATE RUPSNCPDP_DETAIL
+SET HFLT_HDR_NUM = 20574,
+    SUBM_HDR_NUM = 18329           
+WHERE HFLT_HDR_NUM = 20587;       
+--Total of 8301 rows updated
+      
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 113468;    
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 113469;    
+--Total of 1 row updated
+
+
+------------------------------------------------------
+--Mail
+--
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET HFLT_HDR_NUM = 20582,
+    SUBM_HDR_NUM = 18331
+WHERE HFLT_HDR_NUM = 20586;        
+--Total of 68997 rows updated
+
+UPDATE RUPSNCPDP_DETAIL
+SET HFLT_HDR_NUM = 20581,
+    SUBM_HDR_NUM = 18331          
+WHERE HFLT_HDR_NUM = 20585;       
+--Total of 3140 rows updated
+      
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 113458;    
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 113459;    
+--Total of 1 row updated
+
+
+
+
+SELECT  count(*) FROM RUPSNCPDP_DETAIL_SCRIPT
+  WHERE HFLT_HDR_NUM = 20575
+      
+
+SELECT  count(*) FROM RUPSNCPDP_DETAIL
+  WHERE HFLT_HDR_NUM = 20574
+      
+
+---------------------------------------------------------------------------------
+---------------------------    CIGNA 2Q08   -------------------------------------
+
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 113497
+WHERE CPR_NUM = 113498
+    AND HFLT_HDR_NUM = 20576;
+
+--Total of 841 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 4665
+ WHERE CPR_NUM = 113497;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 5731
+ WHERE CPR_NUM = 113498;
+--Total of 1 row updated
+
+
+
+******************************************************************
+
+
+DONE
+------
+
+
+
+
+
+SELECT  count(*),DFLT_PRODUCT_CODE
+ FROM RUPSNCPDP_DETAIL_SCRIPT
+  WHERE HFLT_HDR_NUM = 20577
+       and SUBMITTED_PHARM_ID_CODE in ('4304096', '3976529')
+Group by DFLT_PRODUCT_CODE
+
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_THERP_CLASS_CODE = 'Good'
+   WHERE HFLT_HDR_NUM = 20577
+       AND DFLT_PRODUCT_CODE IN ('00186037020', '00186037220')
+       AND SUBMITTED_PHARM_ID_CODE in ('4304096', '3976529')
+
+--  Total of 568 rows updated
+
+
+SELECT  count(*),DFLT_PRODUCT_CODE, SUBMITTED_PHARM_ID_CODE
+ FROM RUPSNCPDP_DETAIL_SCRIPT
+  WHERE HFLT_HDR_NUM = 20577
+       AND DFLT_PRODUCT_CODE IN ('00186037020', '00186037220')
+       and SUBMITTED_PHARM_ID_CODE in ('4304096', '3976529')
+Group by DFLT_PRODUCT_CODE, SUBMITTED_PHARM_ID_CODE
+
+
+
+
+SELECT  count(*)
+ FROM RUPSNCPDP_DETAIL_SCRIPT
+  WHERE HFLT_HDR_NUM = 19998
+       and SUBMITTED_PHARM_ID_CODE in ('4304096', '3976529');
+
+
+
+
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+
+SELECT  *
+FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE  CM_PLAN_ID = 148707100
+    
+
+
+
+---------------------------                 -------------------------------------
+---------------------------  Caremark/Pharmacare  -------------------------------
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'PARTD_FORM2'
+WHERE CPR_NUM = 112674
+     and hflt_hdr_num = 20507
+
+
+
+
+
+
+
+
+---------------------------   CareMark inc  -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 112145
+WHERE CPR_NUM = 112147
+    AND HFLT_HDR_NUM = 20417;
+
+--Total of 65 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 8897
+ WHERE CPR_NUM = 112145;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 112147;
+--Total of 1 row updated
+
+
+
+---------------------------                 -------------------------------------
+--------------------------- Presbyterian    -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 112366
+WHERE CPR_NUM = 112367
+    AND HFLT_HDR_NUM = 20459;
+
+--Total of 5290 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 5584
+ WHERE CPR_NUM = 112366;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 112367;
+--Total of 1 row updated
+
+
+***************************************
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+       SUBM_HDR_NUM = 18247,	
+        HFLT_HDR_NUM = 20459	
+WHERE HFLT_HDR_NUM = 20460
+   AND   SUBM_HDR_NUM  = 18248;
+   
+--Total of 14039 rows updated
+
+
+---------------------------     AvMed       -------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 112069
+WHERE CPR_NUM = 112068
+    AND HFLT_HDR_NUM = 20420;
+
+--Total of 25 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 27
+ WHERE CPR_NUM = 112069;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 112068;
+--Total of 1 row updated
+
+
+
+
+112068
+
+
+
+---------------------------------------------------------------------------------
+---------------------------  Innoviant      -------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER1 = 'BAD RX'
+WHERE  HFLT_HDR_NUM = 20430
+    AND DFLT_PRODUCT_CODE NOT IN ('00186091706', '00186091612');
+
+--Total of 810 rows updated
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER1 = 'BAD RX'
+WHERE  HFLT_HDR_NUM = 20432
+    AND DFLT_PRODUCT_CODE NOT IN ('00186091706', '00186091612');
+
+--Total of 399 rows updated
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER1 = 'BAD RX'
+WHERE  HFLT_HDR_NUM = 20435
+    AND DFLT_PRODUCT_CODE NOT IN ('00186091706', '00186091612');
+
+--Total of 215 rows updated
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER1 = 'BAD RX'
+WHERE  HFLT_HDR_NUM = 20437
+    AND DFLT_PRODUCT_CODE NOT IN ('00186091706', '00186091612');
+
+--Total of 111 rows updated
+
+
+
+
+
+
+SELECT  count(*), DFLT_PRODUCT_CODE
+FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE  HFLT_HDR_NUM = 20437
+    AND DFLT_PRODUCT_CODE NOT IN ('00186091706', '00186091612')
+    group by rollup (DFLT_PRODUCT_CODE);
+
+
+
+---------------------------------------------------------------------------------
+--------------------------- Silver Script   -------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = '3530400534'
+WHERE hflt_hdr_num = 20372
+AND DFLT_PLAN_ID_CODE = '3530400530';
+--Total of 1 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = '3516100534'
+WHERE hflt_hdr_num = 20372
+AND DFLT_PLAN_ID_CODE = '3516100530';
+--Total of 4 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = '3517200532'
+WHERE hflt_hdr_num = 20372
+AND DFLT_PLAN_ID_CODE = '3517200531';
+--Total of 214 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = '3563400534'
+WHERE hflt_hdr_num = 20372
+AND DFLT_PLAN_ID_CODE = '3563400530';
+--Total of 29 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = '3569984'
+WHERE hflt_hdr_num = 20372
+AND DFLT_PLAN_ID_CODE = '3569964';
+--Total of 6 rows updated
+
+
+
+
+
+
+3530400530 needs to be updated to 3530400534
+3516100530 needs to be updated to 3516100534
+3517200531 needs to be updated to 3517200532
+3563400530 needs to be updated to 3563400534
+3569964 
+
+
+'3530400530', '3516100530', '3517200531', '3563400530',
+'3569964' 
+
+
+SELECT  count(*), DFLT_PLAN_ID_CODE
+FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE hflt_hdr_num = 20372
+and DFLT_PLAN_ID_CODE IN ('3530400534', '3516100534', '3517200532', '3563400534',
+                     '3569984')
+Group by Rollup (DFLT_PLAN_ID_CODE)
+
+---------------------------------------------------------------------------------
+---------------------------  Caremark Inc   -------------------------------------
+UPDATE RUPSNCPDP_DETAIL
+SET DFLT_CUSTOM_FILLER1 = 'DUP DATA'
+WHERE HFLT_HDR_NUM = 20417
+AND HFLT_DETAIL_NUM in ( 921173167,
+921173174,
+921173169,
+921173137,
+921173116,
+921173118,
+921173119,
+921173147,
+921173121,
+921173175,
+921173127,
+921173170,
+921173193,
+921173171,
+921173140,
+921173141,
+921173172,
+921173143,
+921173129,
+921173148,
+921173179,
+921173149,
+921173181,
+921173183,
+921173123,
+921173145,
+921173195,
+921173185,
+921173150,
+921173187,
+921173151,
+921173115,
+921173205
+ );
+
+--Total of 33 rows updated
+
+
+---------------------------------------------------------------------------------
+---------------------------   CIGNA 1Q08    -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'CGLIC PDP'
+WHERE hflt_hdr_num = 20316
+AND CPR_NUM = 111287
+AND DFLT_PLAN_ID_CODE = 'PDPTHREE';
+--Total of 1 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'CHC-AZ MA-PD'
+WHERE hflt_hdr_num = 20316
+AND CPR_NUM = 111286
+AND DFLT_PLAN_ID_CODE = 'CGLIC MA-PD';
+--Total of 5 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'CGLIC PDP'
+WHERE hflt_hdr_num = 20316
+AND CPR_NUM = 111286
+AND DFLT_PLAN_ID_CODE = 'PDPTHREE';
+--Total of 16 rows updated
+
+
+
+---------------------------------------------------------------------------------
+--------------------------- Innoviant 2Q07  -------------------------------------
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 18203,	
+        HFLT_HDR_NUM = 20391
+WHERE HFLT_HDR_NUM = 20390
+   AND   SUBM_HDR_NUM  = 18205;
+   --Total of 40 rows updated
+
+---------------------------------------------------------------------------------
+--------------------------- Innoviant 3Q07  -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 18207,	
+        HFLT_HDR_NUM = 20394
+WHERE HFLT_HDR_NUM = 20393
+   AND   SUBM_HDR_NUM  = 18206;
+   --Total of 40 rows updated
+
+
+---------------------------------------------------------------------------------
+--------------------------- Innoviant 4Q07  -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 18208,	
+        HFLT_HDR_NUM = 20396
+WHERE HFLT_HDR_NUM = 20398
+   AND   SUBM_HDR_NUM  = 18209;
+   --Total of 42 rows updated
+
+---------------------------------------------------------------------------------
+--------------------------- Innoviant 1Q08  -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 18210,	
+        HFLT_HDR_NUM = 20399
+WHERE HFLT_HDR_NUM = 20401
+   AND   SUBM_HDR_NUM  = 18211;
+   --Total of 42 rows updated
+   
+   
+   
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------  Pharmacare  4Q07 -----------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 111819
+WHERE CPR_NUM = 111824
+    AND HFLT_HDR_NUM = 20376;
+
+--Total of 4 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 1621
+ WHERE CPR_NUM = 111819;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 111824;
+--Total of 1 row updated
+
+
+
+---------------------------                 -------------------------------------
+---------------------------  Pharmacare  3Q07 -----------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 111556
+WHERE CPR_NUM = 111560
+    AND HFLT_HDR_NUM = 20359;
+
+--Total of 923 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 8018
+ WHERE CPR_NUM = 111556;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 111560;
+--Total of 1 row updated
+
+
+
+
+
+
+---------------------------                 -------------------------------------
+---------------------------  Presbyterian    -------------------------------------
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 111609
+WHERE CPR_NUM = 111610
+    AND HFLT_HDR_NUM = 20286
+    AND DFLT_PRODUCT_CODE NOT IN ('00186037020', '00186037220');
+
+--Total of 5870 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 6098
+ WHERE CPR_NUM = 111609;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 31
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 31
+ WHERE CPR_NUM = 111610;
+--Total of 1 row updated
+
+
+---------------------------  Presbyterian Symbicort --------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 111645
+WHERE CPR_NUM = 111646
+    AND HFLT_HDR_NUM = 20347;
+
+--Total of 294 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 8691
+ WHERE CPR_NUM = 111645;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 111646;
+--Total of 1 row updated
+
+---------------------------                 -------------------------------------
+---------------------------    Not in       -------------------------------------
+
+SELECT  count(*),DFLT_PRODUCT_CODE
+FROM RUPSNCPDP_DETAIL_SCRIPT
+  WHERE HFLT_HDR_NUM = 20286
+       AND CPR_NUM = 111610
+        AND DFLT_PRODUCT_CODE NOT IN ('00186037020', '00186037220')
+      Group by rollup (DFLT_PRODUCT_CODE)
+---------------------------    CIGNA        -------------------------------------
+----------------------  SUBMITTED_PHARM_ID_CODE   -------------------------------
+
+
+SELECT  count(*),DFLT_PRODUCT_CODE
+ FROM RUPSNCPDP_DETAIL_SCRIPT
+  WHERE HFLT_HDR_NUM = 19998
+       AND CPR_NUM = 109006
+       and SUBMITTED_PHARM_ID_CODE in ('4304096', '3976529')
+Group by DFLT_PRODUCT_CODE
+
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_THERP_CLASS_CODE = 'Good'
+   WHERE HFLT_HDR_NUM = 19998
+       AND CPR_NUM = 109006
+       AND DFLT_PRODUCT_CODE IN ('00186037020', '00186037220')
+       AND SUBMITTED_PHARM_ID_CODE in ('4304096', '3976529')
+
+
+
+
+SELECT  count(*),DFLT_PRODUCT_CODE, SUBMITTED_PHARM_ID_CODE
+ FROM RUPSNCPDP_DETAIL_SCRIPT
+  WHERE HFLT_HDR_NUM = 19998
+       AND CPR_NUM = 109006
+        AND DFLT_PRODUCT_CODE IN ('00186037020', '00186037220')
+       and SUBMITTED_PHARM_ID_CODE in ('4304096', '3976529')
+Group by DFLT_PRODUCT_CODE, SUBMITTED_PHARM_ID_CODE
+
+
+
+
+SELECT  count(*)
+ FROM RUPSNCPDP_DETAIL_SCRIPT
+  WHERE HFLT_HDR_NUM = 19998
+       and SUBMITTED_PHARM_ID_CODE in ('4304096', '3976529');
+
+
+
+
+
+SELECT  count(*), SUBMITTED_PHARM_ID_CODE, DFLT_PRODUCT_DESC
+ FROM RUPSNCPDP_DETAIL_SCRIPT
+  WHERE HFLT_HDR_NUM = 19998
+       and SUBMITTED_PHARM_ID_CODE in ('4304096', '3976529')
+Group by SUBMITTED_PHARM_ID_CODE, DFLT_PRODUCT_DESC
+
+
+---------------------------   PHARMACARE    -------------------------------------
+
+--1 of 2
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'PARTD_FORM2'
+WHERE CPR_NUM = 111494
+     and hflt_hdr_num = 20350
+
+--  Total of 2345 rows updated
+
+
+
+--2 of 2
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'PARTD_FORM2'
+WHERE CPR_NUM = 111495
+     and hflt_hdr_num = 20350
+
+--  Total of 132 rows updated
+
+
+---------------------------   Pharm Tech    -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'PHARMACEUTICAL TE'
+WHERE hflt_hdr_num = 20270
+
+
+--  Total of 87606 rows updated          
+
+---------------------------   Sierra Comm   -------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 111189
+WHERE CPR_NUM = 111186
+  AND DFLT_DATA_LEVEL = 'PN'
+  AND HFLT_HDR_NUM = 20309;
+--Total of 27 rows updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 157
+ WHERE CPR_NUM = 111189;
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 427
+ WHERE CPR_NUM = 111186;
+--Total of 1 row updated
+
+
+
+
+---------------------------                 -------------------------------------
+--------------------------- Harvard pilgrim  v2 ---------------------------------
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 110990
+WHERE CPR_NUM = 110989
+    AND HFLT_HDR_NUM = 20225
+
+--Total of 240 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 1831
+ WHERE CPR_NUM = 110990;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 599
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 599
+ WHERE CPR_NUM = 110989;
+--Total of 1 row updated
+
+
+
+
+
+
+
+
+
+--------------------------- Moving error's from cpr to cpr ----------------------
+
+
+-- This does it versus the RUPSNCPDP_DETAIL_SCRIPT table
+UPDATE RUPSSCRIPTERR RSE
+SET RSE.CPR_NUM = 105389
+WHERE RSE.HFLT_DETAIL_NUM in (SELECT DISTINCT RSE2.HFLT_DETAIL_NUM
+                                FROM RUPSSCRIPTERR RSE2,
+                                     RUPSNCPDP_DETAIL_SCRIPT RNDS
+                               where RNDS.CPR_NUM IN (105389)
+                                 AND RNDS.HFLT_DETAIL_NUM = RSE2.HFLT_DETAIL_NUM
+                                 AND RNDS.CPR_NUM <> RSE2.CPR_NUM );
+                                 
+--Total of 501 rows updated
+
+-- This does it against the RUPSNCPDP_DETAIL Table
+UPDATE RUPSSCRIPTERR RSE
+SET RSE.CPR_NUM = 105389
+WHERE RSE.HFLT_DETAIL_NUM in (SELECT DISTINCT RSE2.HFLT_DETAIL_NUM
+                                FROM RUPSSCRIPTERR RSE2,
+                                     RUPSNCPDP_DETAIL RNDS
+                               where RNDS.CPR_NUM IN (105389)
+                                 AND RNDS.HFLT_DETAIL_NUM = RSE2.HFLT_DETAIL_NUM
+                                 AND RNDS.CPR_NUM <> RSE2.CPR_NUM );
+                                 
+--Total of 501 rows updated
+
+
+UPDATE RUPSDUPE_XREF RDX
+SET RDX.CPR_NUM = 105389
+WHERE RDX.HFLT_DETAIL_NUM in (SELECT DISTINCT RDX2.HFLT_DETAIL_NUM
+                                FROM RUPSDUPE_XREF RDX2,
+                                     RUPSNCPDP_DETAIL_SCRIPT RNDS
+                               where RNDS.CPR_NUM IN (105389)
+                                 AND RNDS.HFLT_DETAIL_NUM = RDX2.HFLT_DETAIL_NUM
+                                 AND RNDS.CPR_NUM <> RDX2.CPR_NUM );
+
+--Total of 285 rows updated
+
+
+
+
+
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER4 = 'BAD RX'
+WHERE HFLT_HDR_NUM IN (20207)
+   and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+-- 20 rows updated
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER5 = 'BAD RX'
+WHERE HFLT_HDR_NUM IN (20188)
+   and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+-- 11 rows updated
+
+
+
+
+
+
+
+---------------------------                 -------------------------------------
+---------------------------   Symbicort Medco 1Q08    ---------------------------
+
+-- Symbicort Mail
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 109991
+WHERE CPR_NUM = 109994
+    AND HFLT_HDR_NUM = 20181
+
+--Total of 915 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 17368
+ WHERE CPR_NUM = 109991;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 109994;
+--Total of 1 row updated
+
+
+-- Symbicort Retail
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 109990
+WHERE CPR_NUM = 109992
+  AND HFLT_HDR_NUM = 20181
+
+--Total of 1578 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 44825
+ WHERE CPR_NUM = 109990;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 109992;
+--Total of 1 row updated
+
+
+
+---------------------------   medco Pulmicort 1Q08 -----------------------------------
+
+-- Pulmicort Retail
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 110137
+WHERE CPR_NUM = 110136
+    AND HFLT_HDR_NUM = 20197
+
+--Total of 14444 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 56627
+ WHERE CPR_NUM = 110137;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 110136;
+--Total of 1 row updated
+
+
+-- Pulmicort Mail
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 110138
+WHERE CPR_NUM = 110135
+  AND HFLT_HDR_NUM = 20197
+
+--Total of 8574 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 20200
+ WHERE CPR_NUM = 110138;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 110135;
+--Total of 1 row updated
+
+
+
+
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+--357
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'M0357'
+WHERE hflt_hdr_num = 20166
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = '357';
+-- 87906 rows updated
+
+UPDATE RUPSNCPDP_DETAIL
+ SET DFLT_PLAN_ID_CODE = 'M0357'
+ WHERE hflt_hdr_num = 20165
+ AND DFLT_PLAN_ID_CODE = 'M'
+ AND DFLT_FORMULARY_CODE = '357';
+-- 21 rows updated
+
+
+
+
+-- 260
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'R1260'
+WHERE hflt_hdr_num = 20166
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = '260';
+-- 44832 rows updated
+ 
+ UPDATE RUPSNCPDP_DETAIL
+ SET DFLT_PLAN_ID_CODE = 'R1260'
+ WHERE hflt_hdr_num = 20165
+ AND DFLT_PLAN_ID_CODE = 'R'
+ AND DFLT_FORMULARY_CODE = '260';
+-- 77 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL
+ SET DFLT_PLAN_ID_CODE = 'M1260'
+ WHERE hflt_hdr_num = 20165
+ AND DFLT_PLAN_ID_CODE = 'M'
+ AND DFLT_FORMULARY_CODE = '260';
+-- 26 rows updated
+
+
+--261
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'R1261'
+WHERE hflt_hdr_num = 20166
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = '261';
+-- 295731 rows updated
+
+
+ UPDATE RUPSNCPDP_DETAIL
+ SET DFLT_PLAN_ID_CODE = 'R1261'
+ WHERE hflt_hdr_num = 20165
+ AND DFLT_PLAN_ID_CODE = 'R'
+ AND DFLT_FORMULARY_CODE = '261';
+-- 7055 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL
+ SET DFLT_PLAN_ID_CODE = 'M1261'
+ WHERE hflt_hdr_num = 20165
+ AND DFLT_PLAN_ID_CODE = 'M'
+ AND DFLT_FORMULARY_CODE = '261';
+-- 2433 rows updated
+
+
+
+--262
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'R1262'
+WHERE hflt_hdr_num = 20166
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = '262';
+-- 97865 rows updated
+
+
+ UPDATE RUPSNCPDP_DETAIL
+ SET DFLT_PLAN_ID_CODE = 'R1262'
+ WHERE hflt_hdr_num = 20165
+ AND DFLT_PLAN_ID_CODE = 'R'
+ AND DFLT_FORMULARY_CODE = '262';
+-- 722 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL
+ SET DFLT_PLAN_ID_CODE = 'M1262'
+ WHERE hflt_hdr_num = 20165
+ AND DFLT_PLAN_ID_CODE = 'M'
+ AND DFLT_FORMULARY_CODE = '262';
+-- 183 rows updated
+
+
+
+
+
+
+
+
+---------------------------                 -------------------------------------
+--------------------------- MEDCO          -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108532
+    DFLT_CUSTOM_FILLER4 = 'BRAND'
+WHERE CPR_NUM = 108531
+  AND DFLT_PLAN_ID_CODE = '0939'
+  AND HFLT_HDR_NUM = 20051;
+--Total of 5895 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 26256
+ WHERE CPR_NUM = 108532;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 190195
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 190195
+ WHERE CPR_NUM = 108531;
+--Total of 1 row updated
+
+
+
+
+---------------------------   Innoviant 1Q08 ------------------------------------
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 18016,	
+        HFLT_HDR_NUM = 20134
+WHERE HFLT_HDR_NUM = 20138
+   AND   SUBM_HDR_NUM  = 18018;
+   --Total of 1124 rows updated
+
+   
+   
+  UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 18017,	
+        HFLT_HDR_NUM = 20136
+WHERE HFLT_HDR_NUM = 20139
+   AND   SUBM_HDR_NUM  = 18019;
+   --Total of 43 rows updated
+
+
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 109228
+WHERE CPR_NUM = 109227
+  AND HFLT_HDR_NUM = 20134;
+--Total of 52 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 161
+ WHERE CPR_NUM = 109228;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 109227;
+--Total of 1 row updated
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 109168
+WHERE CPR_NUM = 109171
+  AND HFLT_HDR_NUM = 20136
+--Total of 4 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 1031
+ WHERE CPR_NUM = 109168;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 109171;
+--Total of 1 row updated
+
+
+
+--------------------------- INOVIANT Symbicort 1Q08-------------------------------
+
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 79006
+WHERE CPR_NUM = 79007
+  AND HFLT_HDR_NUM = 19362;
+--Total of 6 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 334
+ WHERE CPR_NUM = 79006;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 79007;
+--Total of 1 row updated
+
+
+
+---------------------------   CIGNA 1Q08    -------------------------------------
+
+Select All DFLT_PRODUCT_CODE, Count(DFLT_PRODUCT_CODE) as product_code
+  from RUPSNCPDP_DETAIL
+  WHERE CPR_NUM = 108993
+  AND HFLT_HDR_NUM = 19997
+  group by rollup(DFLT_PRODUCT_CODE);
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 108993
+WHERE CPR_NUM = 108994
+  AND HFLT_HDR_NUM = 19997
+
+--Total of 840 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 4858
+ WHERE CPR_NUM = 108993;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 4032
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 4032
+ WHERE CPR_NUM = 108994;
+--Total of 1 row updated
+
+
+
+
+---------------------------                 -------------------------------------
+------------------------  UPMC 3Q07 Seroquel    ---------------------------------
+
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108868
+WHERE CPR_NUM = 78384
+    AND HFLT_HDR_NUM = 19313
+    AND DFLT_DATA_LEVEL = 'PP'
+--Total of 1368 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 1368
+ WHERE CPR_NUM = 108868;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 4343
+ WHERE CPR_NUM = 78384;
+--Total of 1 row updated
+
+
+
+
+
+
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+	'ORIGINAL',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'301372401',  -- Contract number 
+	'301372401',  -- Contract number 
+	1243251003, -- Org Number
+	to_date('20070701', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20070930', 'yyyymmdd'), -- CPR End Date
+	17399,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	1368,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+
+
+
+---------------------------  PharmaStar     -------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = '70'
+WHERE HFLT_HDR_NUM = 19927
+  AND DFLT_PLAN_ID_CODE in ('2706', '2707')
+  AND DFLT_DATE_FILLED < '20071001';
+
+-Total of 6  rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = '2'
+WHERE HFLT_HDR_NUM = 19927
+  AND DFLT_PLAN_ID_CODE = '2697'
+  AND DFLT_DATE_FILLED < '20071001';
+
+-Total of 1 rows updated
+---------------------------  ESI 4Q07      -------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 107935
+WHERE CPR_NUM = 107947
+    AND HFLT_HDR_NUM = 19979
+
+--Total of 2113 rows updated
+
+
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 6384
+ WHERE CPR_NUM = 107935;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 107947;
+--Total of 1 row updated
+
+---------------------------                 -------------------------------------
+
+--------------------- Crestor\Atacand\Seroquel 10012007- 12312007 ---------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108541
+WHERE CPR_NUM = 108271
+    AND HFLT_HDR_NUM = 20030
+    AND DFLT_DATE_FILLED < '20071001'
+--Total of 12 rows updated
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108542
+WHERE CPR_NUM = 108271
+    AND HFLT_HDR_NUM = 20030
+    AND DFLT_DATE_FILLED < '20080101'
+--Total of 6243 rows updated
+
+
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 97762
+ WHERE CPR_NUM = 108271;    
+--Total of 1 row updated
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+--------------------- Crestor\Atacand\Seroquel 10012007- 12312007 ---------------
+
+
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+	'ADJUST',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'100015809',  -- Contract number 
+	'100015809',  -- Contract number 
+	1148191001, -- Org Number
+	to_date('20071001', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20071231', 'yyyymmdd'), -- CPR End Date
+	17941,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	6243,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+---------------- Crestor\Atacand\Seroquel 10012007- 12312007    ----------------
+
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+ 	'ADJUST',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'100015809',  -- Contract number 
+	'100015809',  -- Contract number 
+	1148191001, -- Org Number
+	to_date('20070701', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20070930', 'yyyymmdd'), -- CPR End Date
+	17941,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	 12,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+
+
+
+------------------- Crestor\Atacand\Seroquel 10012007- 12312007------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108514
+WHERE CPR_NUM = 108270
+    AND HFLT_HDR_NUM = 20030
+    AND DFLT_DATE_FILLED < '20080101'
+--Total of 373 rows updated
+
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 118957
+ WHERE CPR_NUM = 108270;    
+--Total of 1 row updated
+
+
+
+
+119330
+---------------------------                 -------------------------------------
+------------------ Crestor\Atacand\Seroquel 10012007- 12312007     --------------
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+	'ADJUST',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'300992001',  -- Contract number 
+	'300992001',  -- Contract number 
+	1148191001, -- Org Number
+	to_date('20071001', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20071231', 'yyyymmdd'), -- CPR End Date
+	17941,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	373,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+
+
+
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108512
+WHERE CPR_NUM = 108275
+    AND HFLT_HDR_NUM = 20030
+    AND DFLT_DATE_FILLED < '20071001'
+--Total of 107 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108513
+WHERE CPR_NUM = 108275
+    AND HFLT_HDR_NUM = 20030
+    AND DFLT_DATE_FILLED < '20080101'
+--Total of 482 rows updated
+
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 41689
+ WHERE CPR_NUM = 108275;    
+--Total of 1 row updated
+
+
+
+---------------------------                 -------------------------------------
+
+
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+ 	'ADJUST',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'100016345',  -- Contract number 
+	'100016345',  -- Contract number 
+	1148191001, -- Org Number
+	to_date('20070701', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20070930', 'yyyymmdd'), -- CPR End Date
+	17941,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	 107,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+------------------ Crestor\Atacand\Seroquel 10012007- 12312007     --------------
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+ 	'ADJUST',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'100016345',  -- Contract number 
+	'100016345',  -- Contract number 
+	1148191001, -- Org Number
+	to_date('20071001', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20071231', 'yyyymmdd'), -- CPR End Date
+	17941,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	482,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+
+---------------------------                 -------------------------------------
+--------------------------- Pulmicort\rhinccort APCS  ---------------------------
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 23221
+ WHERE CPR_NUM = 108295;    
+--Total of 1 row updated
+
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 54173
+ WHERE CPR_NUM = 108293;    
+--Total of 1 row updated
+
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 2518
+ WHERE CPR_NUM = 108294;    
+--Total of 1 row updated
+
+
+--------------------------- Rhinocort Formulary   -------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108388
+WHERE CPR_NUM = 108294
+    AND HFLT_HDR_NUM = 20032
+    AND DFLT_DATE_FILLED < '20080101'
+--Total of 34 rows updated
+
+
+--------------------------- Rhinocort Formulary             --------------------
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+ 	'ADJUST',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'100016298',  -- Contract number 
+	'100016298',  -- Contract number 
+	1148191001, -- Org Number
+	to_date('20071001', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20071231', 'yyyymmdd'), -- CPR End Date
+	17942,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	34,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+
+
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+--------------------------- Rhinocort 1 of 3 ------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108349
+WHERE CPR_NUM = 108293
+    AND HFLT_HDR_NUM = 20032
+    AND DFLT_DATE_FILLED < '20080101'
+--Total of 3018 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108353
+WHERE CPR_NUM = 108293
+    AND HFLT_HDR_NUM = 20032
+    AND DFLT_DATE_FILLED < '20071001'
+--Total of 21 rows updated
+
+
+
+
+
+--------------------- Rhinocort 1 of 3  07012007 -09302007  ----------------------
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+ 	'ADJUST',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'100016318',  -- Contract number 
+	'100016318',  -- Contract number 
+	1148191001, -- Org Number
+	to_date('20070701', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20070930', 'yyyymmdd'), -- CPR End Date
+	17942,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	  21,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+---------------------------                 -------------------------------------
+
+
+
+
+
+
+
+
+
+
+--------------------------- Rhinocort 1 of 3 10012007 - 12312007 -----------------
+
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+ 	'ADJUST',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'100016318',  -- Contract number 
+	'100016318',  -- Contract number 
+	1148191001, -- Org Number
+	to_date('20071001', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20071231', 'yyyymmdd'), -- CPR End Date
+	17942,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	3018,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+
+
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+-- Pulmicort  flex
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108296
+WHERE CPR_NUM = 108295
+    AND HFLT_HDR_NUM = 20032
+    AND DFLT_DATE_FILLED < '20080101'
+--Total of 1182 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108297
+WHERE CPR_NUM = 108295
+    AND HFLT_HDR_NUM = 20032
+    AND DFLT_DATE_FILLED < '20071001'
+--Total of 2 rows updated
+
+
+
+
+---------------------------                 -------------------------------------
+
+
+
+------------------ Pulmicort  flex adjust 10012007 - 12312007  ------------------
+
+
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+ 	'ADJUST',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'100016315',  -- Contract number 
+	'100016315',  -- Contract number 
+	1148191001, -- Org Number
+	to_date('20071001', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20071231', 'yyyymmdd'), -- CPR End Date
+	17942,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	1182,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+
+
+
+-----------------------Pulmicort  flex adjust  07012007 -09302007 ----------------
+
+
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+ 	'ADJUST',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'100016315',  -- Contract number 
+	'100016315',  -- Contract number 
+	1148191001, -- Org Number
+	to_date('20070701', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20070930', 'yyyymmdd'), -- CPR End Date
+	17942,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	2,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------------------- APCS Combined Nexium     ----------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET HFLT_HDR_NUM = 20018,
+    SUBM_HDR_NUM = 17932
+WHERE HFLT_HDR_NUM = 20016;        
+--Total of 140322 rows updated
+
+UPDATE RUPSNCPDP_DETAIL
+SET HFLT_HDR_NUM = 20017,
+    SUBM_HDR_NUM = 17932           
+WHERE HFLT_HDR_NUM = 20015;       
+--Total of 27108 rows updated
+      
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 108186;    
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 108185;    
+--Total of 1 row updated
+
+
+------------------------------------------------------
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET HFLT_HDR_NUM = 20010,
+    SUBM_HDR_NUM = 17930
+WHERE HFLT_HDR_NUM = 20008;        
+--Total of 62074 rows updated
+
+UPDATE RUPSNCPDP_DETAIL
+SET HFLT_HDR_NUM = 20009,
+    SUBM_HDR_NUM = 17930           
+WHERE HFLT_HDR_NUM = 20007;       
+--Total of 9141 rows updated
+      
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 108154;    
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 108153;    
+--Total of 1 row updated
+
+
+
+
+
+
+
+
+
+
+---------------------------                 -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = '20264'
+WHERE DFLT_PLAN_ID_CODE = '12345'
+  AND HFLT_HDR_NUM = 19989
+    
+--Total of 1 rows updated
+
+
+
+Select * from RUPSNCPDP_DETAIL_SCRIPT
+ --  DFLT_PLAN_ID_CODE = '20264'
+WHERE DFLT_PLAN_ID_CODE = '12345'
+  AND HFLT_HDR_NUM = 19989
+  
+---------------------------                 -------------------------------------
+_______________________________update  Zomig
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 108065
+WHERE CPR_NUM = 108064
+    AND HFLT_HDR_NUM = 19986
+
+--Total of 30 rows updated
+
+
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 10137
+ WHERE CPR_NUM = 108065;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 108064;
+--Total of 1 row updated
+
+
+--------------------------------------update RAQ
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 108070
+    HFLT_HDR_NUM = 19987
+WHERE CPR_NUM = 107866
+    AND HFLT_HDR_NUM = 19996
+
+--Total of 1356 rows updated
+
+
+
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 20719
+ WHERE CPR_NUM = 108070;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 107866;
+--Total of 1 row updated
+
+
+
+---------------------------   Create new cpr ------------------------------------
+
+
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+ 	'ORIGINAL',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'100016191',  -- Contract number 
+	'100016191',  -- Contract number 
+	212491012, -- Org Number
+	to_date('20070401', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20070630', 'yyyymmdd'), -- CPR End Date
+	16942,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	326492,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+
+
+
+
+
+---------------------------    CareMark FEP -------------------------------------
+--Seroquel
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 107674
+WHERE CPR_NUM = 107675
+    AND HFLT_HDR_NUM = 19973
+
+--Total of 785 rows updated
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 107674
+WHERE CPR_NUM = 107675
+    AND HFLT_HDR_NUM = 19972
+
+--Total of 12 rows updated
+
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 47806
+ WHERE CPR_NUM = 107674;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 107675;
+--Total of 1 row updated
+
+
+
+-- Nexium
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 107677
+WHERE CPR_NUM = 107681
+    AND HFLT_HDR_NUM = 19973
+
+--Total of 196 rows updated
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 107677
+WHERE CPR_NUM = 107681
+    AND HFLT_HDR_NUM = 19972
+
+--Total of 2 rows updated
+
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 198030
+ WHERE CPR_NUM = 107677;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 107681;
+--Total of 1 row updated
+
+
+
+
+
+
+
+
+
+
+
+---------------------------    Group health  ------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 107250
+WHERE CPR_NUM = 107252
+    AND HFLT_HDR_NUM = 19510
+
+--Total of 1777 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 1822
+ WHERE CPR_NUM = 107250;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 107252;
+--Total of 1 row updated
+
+
+
+---------------------------                 -------------------------------------
+Select DFLT_PRODUCT_DESC, COUNT(DFLT_PRODUCT_DESC)
+  from RUPSNCPDP_DETAIL_SCRIPT
+  WHERE CPR_NUM = 106557
+  AND HFLT_HDR_NUM = 19865
+  Group by DFLT_PRODUCT_DESC
+
+
+
+---------------------------                 -------------------------------------
+select DFLT_PLAN_ID_CODE, COUNT(DFLT_PLAN_ID_CODE)
+  FROM RUPSNCPDP_DETAIL_SCRIPT
+ WHERE HFLT_HDR_NUM = 19844
+   group by DFLT_PLAN_ID_CODE
+
+
+---------------------------                 -------------------------------------
+
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 106353
+WHERE CPR_NUM = 106351
+    AND HFLT_HDR_NUM = 19803
+
+--Total of 187 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 1835
+ WHERE CPR_NUM = 106353;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 296
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 296
+ WHERE CPR_NUM = 106351;
+--Total of 1 row updated
+
+
+---------------------------     option 2   -------------------------------------
+
+SELECT DISTINCT
+	DFLT_PLAN_ID_CODE,
+	DFLT_CUSTOM_FILLER1,
+	DFLT_PRODUCT_DESC,
+	3145,
+	COUNT(*)
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+		HFLT_HDR_NUM = 19816
+	AND	HFLT_DETAIL_NUM >= 857193750
+	AND	HFLT_DETAIL_NUM < 857197223
+GROUP BY
+	DFLT_PLAN_ID_CODE,
+	DFLT_CUSTOM_FILLER1,
+	DFLT_PRODUCT_DESC
+ORDER BY
+	DFLT_PRODUCT_DESC
+
+
+
+-------------------------    option 1     -------------------------------------
+
+SELECT DISTINCT
+	DFLT_PLAN_ID_CODE,
+	DFLT_CUSTOM_FILLER1,
+	DFLT_PRODUCT_DESC,
+	3142,
+	COUNT(*)
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+		HFLT_HDR_NUM = 19814
+	AND	HFLT_DETAIL_NUM >= 857185328
+	AND	HFLT_DETAIL_NUM < 857193749
+GROUP BY
+	DFLT_PLAN_ID_CODE,
+	DFLT_CUSTOM_FILLER1,
+	DFLT_PRODUCT_DESC
+ORDER BY
+	DFLT_PRODUCT_DESC
+
+
+
+---------------------------    brand by brand  ----------------------------------
+
+SELECT DISTINCT
+	DFLT_PLAN_ID_CODE,
+	DFLT_CUSTOM_FILLER1,
+	DFLT_PRODUCT_DESC,
+	3157,
+	COUNT(*)
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+		HFLT_HDR_NUM = 19812
+	AND	HFLT_DETAIL_NUM >= 857175760
+	AND	HFLT_DETAIL_NUM < 857185328
+GROUP BY
+	DFLT_PLAN_ID_CODE,
+	DFLT_CUSTOM_FILLER1,
+	DFLT_PRODUCT_DESC
+ORDER BY
+	DFLT_PRODUCT_DESC
+
+
+
+
+---------------------------                 -------------------------------------
+select All *
+  from RUPSNCPDP_DETAIL
+  WHERE CPR_NUM = 105771
+  AND HFLT_HDR_NUM = 19797
+  and DFLT_THERP_CLASS_DESC = 'SYMBICORT'
+  
+  
+
+Select All *
+  from RUPSNCPDP_DETAIL
+  WHERE CPR_NUM = 105771
+  AND HFLT_HDR_NUM = 19797
+  and DFLT_THERP_CLASS_DESC = 'PULMICORT TURBOHALER'
+---------------------------                 -------------------------------------
+
+
+WHERE CPR_NUM = 82134
+
+
+---------------------------                 -------------------------------------
+--------------------------- Medco Symbicort -------------------------------------
+
+-- Symbicort Retail
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 82134
+WHERE CPR_NUM = 82136
+    AND HFLT_HDR_NUM = 19730
+
+--Total of 1646 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 32438
+ WHERE CPR_NUM = 82134;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 82136;
+--Total of 1 row updated
+
+
+-- Symbicort Mail
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 82135
+WHERE CPR_NUM = 82139
+  AND HFLT_HDR_NUM = 19730
+
+--Total of 864 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 13225
+ WHERE CPR_NUM = 82135;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 82139;
+--Total of 1 row updated
+
+
+
+---------------------------   medco Pulmicort -----------------------------------
+
+-- Pulmicort Retail
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 105262
+WHERE CPR_NUM = 105261
+    AND HFLT_HDR_NUM = 19752
+
+--Total of 13942 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 53423
+ WHERE CPR_NUM = 105262;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 105261;
+--Total of 1 row updated
+
+
+-- Pulmicort Mail
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 105263
+WHERE CPR_NUM = 105260
+  AND HFLT_HDR_NUM = 19752
+
+--Total of 8003 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 17605
+ WHERE CPR_NUM = 105263;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 105260;
+--Total of 1 row updated
+
+
+
+
+
+
+---------------------------      Pharm Tech   ----------------------------------
+-- SYMBICORT ORIG
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 82155
+    SUBM_HDR_NUM = 17644,	
+    HFLT_HDR_NUM = 19641
+WHERE CPR_NUM = 81569
+  AND SUBM_HDR_NUM = 17643,
+  AND HFLT_HDR_NUM = 19640
+
+--Total of 7122 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 9014
+ WHERE CPR_NUM = 82155;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 81569;
+--Total of 1 row updated
+
+
+
+-- SYMBICORT Adjustment 3Q07
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 82157
+    SUBM_HDR_NUM = 17644,	
+    HFLT_HDR_NUM = 19641
+WHERE CPR_NUM = 81571
+  AND SUBM_HDR_NUM = 17643,
+  AND HFLT_HDR_NUM = 19640
+
+--Total of 38 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 45
+ WHERE CPR_NUM = 82157;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 81571;
+--Total of 1 row updated
+
+
+
+-- PTH  Orig
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 82156
+    SUBM_HDR_NUM = 17644,	
+    HFLT_HDR_NUM = 19641
+WHERE CPR_NUM = 81570
+  AND SUBM_HDR_NUM = 17643,
+  AND HFLT_HDR_NUM = 19640
+
+--Total of 261 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 529
+ WHERE CPR_NUM = 82156;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 81570;
+--Total of 1 row updated
+
+
+
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+select DFLT_PLAN_ID_CODE, SUBMITTED_PLAN_ID_CODE, COUNT(DFLT_PLAN_ID_CODE)
+  FROM RUPSNCPDP_DETAIL_SCRIPT
+ WHERE HFLT_HDR_NUM = 19579
+   AND DFLT_PLAN_ID_CODE IS NOT NULL
+  GROUP BY DFLT_PLAN_ID_CODE, SUBMITTED_PLAN_ID_CODE;
+
+
+
+---------------------------                 -------------------------------------
+SELECT * FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+	HFLT_HDR_NUM IN (19729)
+AND length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0
+and DFLT_CUSTOM_FILLER2 = 'BAD RX';
+
+---------------------------  checking cprs  -------------------------------------
+
+Select COUNT(*) from RUPSNCPDP_DETAIL
+  WHERE CPR_NUM = 81628
+  AND HFLT_HDR_NUM = 19675;
+
+Select COUNT(*) from RUPSNCPDP_DETAIL_Script
+  WHERE CPR_NUM = 81628
+  AND HFLT_HDR_NUM = 19676;
+
+
+
+---------------------------   Medco              -------------------------------------
+--post loading:
+
+SELECT * FROM RUPSNCPDP_DETAIL_SCRIPT 
+WHERE
+	HFLT_HDR_NUM IN (19720)
+AND length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+and DFLT_CUSTOM_FILLER2 = 'BAD RX'
+
+
+
+--pre loading:
+
+SELECT * FROM RUPSNCPDP_DETAIL_SCRIPT 
+WHERE
+	HFLT_HDR_NUM IN (19731)
+AND length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER2 = 'BAD RX'
+WHERE
+	HFLT_HDR_NUM IN (19729)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+-- 2 rows updated
+
+**************************************************
+
+
+
+SELECT * FROM RUPSNCPDP_DETAIL_SCRIPT 
+WHERE
+	HFLT_HDR_NUM IN (19720)
+AND length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+and DFLT_CUSTOM_FILLER2 = 'BAD RX'
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER2 = 'BAD RX'
+WHERE
+	HFLT_HDR_NUM IN (19701)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+-- 7 rows updated
+
+
+
+
+---------------------------                 -------------------------------------
+---------------------------  turning off the LTC FLAG    ------------------------
+
+update rupssubm_val 
+set validation_flag = 0 
+WHERE  subm_hdr_num = 17676
+ AND	validation_code = 'LTC'
+
+
+
+
+
+
+---------------------------   Pharm Tech 4Q07  ----------------------------------
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 17xxx,	
+        HFLT_HDR_NUM = 19xxx
+WHERE HFLT_HDR_NUM = 19xxx
+   AND   SUBM_HDR_NUM  = 17xxx
+   --Total of 12459 rows updated
+
+
+
+
+
+--------------------------- CIGNA  4Q07     ------------------------------------
+
+Select All DFLT_PRODUCT_CODE, Count(DFLT_PRODUCT_CODE) as product_code
+  from RUPSNCPDP_DETAIL
+  WHERE CPR_NUM = 81628
+  AND HFLT_HDR_NUM = 19675
+  group by rollup(DFLT_PRODUCT_CODE);
+
+
+
+
+	UPDATE RUPSNCPDP_DETAIL
+	SET CPR_NUM = 81627
+	WHERE CPR_NUM = 81628
+	  AND HFLT_HDR_NUM = 19675
+
+	--Total of 738 rows updated
+
+	--New CPR total line count being set to the combined cpr total lines
+	UPDATE rupsclaim_parse_results
+	   SET LINE_COUNT = 4655
+	 WHERE CPR_NUM = 81627;
+	--Total of 1 row updated
+
+	-- Old CPR Total line count being set to 2534
+	UPDATE rupsclaim_parse_results
+	   SET LINE_COUNT = 2534
+	 WHERE CPR_NUM = 81628;
+	--Total of 1 row updated
+
+
+
+
+
+---------------------------                 -------------------------------------
+select *   FROM RUPSNCPDP_DETAIL_SCRIPT
+ WHERE HFLT_HDR_NUM = 19676
+   AND CPR_NUM = 81587
+
+
+
+---------------------------  presbyterian   -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 17621,	
+        HFLT_HDR_NUM = 19612
+WHERE HFLT_HDR_NUM = 19613
+   AND   SUBM_HDR_NUM  = 17622
+   --Total of 12459 rows updated
+
+
+
+
+---------------------------    CHD Merdian   -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 81064
+WHERE CPR_NUM = 81065
+  AND HFLT_HDR_NUM = 19602;
+ 
+--Total of 4 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 198
+ WHERE CPR_NUM = 81064;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 81065;
+--Total of 1 row updated
+
+
+
+---------------------------                 -------------------------------------
+---------------------------   CAREMARK /APCS MAIL        -----------------------
+
+-- CAREMARK /APCS MAIL
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET HFLT_HDR_NUM = 19587,
+    SUBM_HDR_NUM = 17601
+WHERE HFLT_HDR_NUM = 19590;        
+--Total of 72779 rows updated
+
+UPDATE RUPSNCPDP_DETAIL
+SET HFLT_HDR_NUM = 19586,
+    SUBM_HDR_NUM = 17601           
+WHERE HFLT_HDR_NUM = 19589;       
+--Total of 4163 rows updated
+      
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 81028;    
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 81027;    
+--Total of 1 row updated
+
+
+
+
+
+-- CAREMARK /APCS RETAIL
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET HFLT_HDR_NUM = 19585,
+    SUBM_HDR_NUM = 17602
+WHERE HFLT_HDR_NUM = 19592;        
+--Total of 161628 rows updated
+
+UPDATE RUPSNCPDP_DETAIL
+SET HFLT_HDR_NUM = 19584,
+    SUBM_HDR_NUM = 17602           
+WHERE HFLT_HDR_NUM = 19591;       
+--Total of 9088 rows updated
+      
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 81030;    
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 81029;    
+--Total of 1 row updated
+
+
+
+
+
+
+
+
+
+----------------------  APCS /Caremark Nexium      ------------------------------
+
+-- CAREMARK RETAIL
+UPDATE RUPSNCPDP_DETAIL
+SET DFLT_CUSTOM_FILLER1 = 'DUP DATA'
+WHERE HFLT_HDR_NUM = 19591
+  AND TO_NUMBER(DFLT_CUSTOM_FILLER5) > 29999;
+-- 9088 rows updated.
+
+-- CAREMARK MAIL
+UPDATE RUPSNCPDP_DETAIL
+SET DFLT_CUSTOM_FILLER1 = 'DUP DATA'
+WHERE HFLT_HDR_NUM = 19589
+  AND TO_NUMBER(DFLT_CUSTOM_FILLER5) > 29999;
+-- 4163 rows updated.
+
+-- APCS RETAIL
+UPDATE RUPSNCPDP_DETAIL
+SET DFLT_CUSTOM_FILLER1 = 'DUP DATA'
+WHERE HFLT_HDR_NUM = 19584
+  AND TO_NUMBER(DFLT_CUSTOM_FILLER5) <= 29999;
+-- 20378 rows updated.
+
+-- APCS MAIL
+UPDATE RUPSNCPDP_DETAIL
+SET DFLT_CUSTOM_FILLER1 = 'DUP DATA'
+WHERE HFLT_HDR_NUM = 19586
+  AND TO_NUMBER(DFLT_CUSTOM_FILLER5) <= 29999;
+-- 6732 rows updated.
+
+
+
+
+
+
+
+
+
+
+
+---------------------------    Tables       -------------------------------------
+RUPSSCRIPTERR
+RUPSNCPDP_DETAIL_SCRIPT
+rupsclaim_parse_results
+RUPSNCPDP_DETAIL
+rupssubm_hdr
+RUPS.RUPSFILE_TRAILER
+RUPS.RUPSFILE_HEADER
+
+
+
+
+
+
+---------------------------   Rups Error    -------------------------------------
+
+UPDATE RUPSSCRIPTERR RSE
+SET RSE.CPR_NUM = 80095
+WHERE RSE.HFLT_DETAIL_NUM in (SELECT DISTINCT RSE2.HFLT_DETAIL_NUM
+                                FROM RUPSSCRIPTERR RSE2,
+                                     RUPSNCPDP_DETAIL_SCRIPT RNDS
+                               where RNDS.CPR_NUM IN (80095)
+                                 AND RNDS.HFLT_DETAIL_NUM = RSE2.HFLT_DETAIL_NUM
+                                 AND RNDS.CPR_NUM <> RSE2.CPR_NUM );
+                                 
+--Total of 35 rows updated
+
+
+
+
+
+
+
+---------------------------   RX Solutions Medicare Part D  ---------------------
+
+
+select DFLT_CUSTOM_FILLER2, count(DFLT_CUSTOM_FILLER2)
+  FROM RUPSNCPDP_DETAIL_SCRIPT
+ WHERE HFLT_HDR_NUM = 19519
+   AND DFLT_PLAN_ID_CODE IS NULL
+  GROUP BY DFLT_CUSTOM_FILLER2  
+
+
+
+
+
+---------------------------  Null Values     -------------------------------------
+-- change header number to current number
+
+SELECT  *
+ FROM 	RUPSNCPDP_DETAIL_SCRIPT
+  WHERE  	HFLT_HDR_NUM = 19531
+  AND	DFLT_TOT_NUM_PRESCRIPTIONS is null
+  
+  
+  
+---------------------------     UHC         -------------------------------------
+
+
+
+
+select DFLT_CUSTOM_FILLER2, count(DFLT_PLAN_ID_CODE)
+  FROM RUPSNCPDP_DETAIL_SCRIPT
+ WHERE HFLT_HDR_NUM = 19514
+   AND DFLT_PLAN_ID_CODE IS NULL
+  GROUP BY DFLT_CUSTOM_FILLER2
+  
+
+
+
+
+---------------------------  Comprehensive  -------------------------------------
+SELECT count(*) 
+  from RUPSNCPDP_DETAIL_SCRIPT
+  WHERE CPR_NUM = 80095
+  AND HFLT_HDR_NUM = 19477
+  AND CPR_NUM = 
+  AND DFLT_PLAN_ID_CODE IN ('31','32','34','198','2587')
+  
+  
+ SELECT DFLT_PLAN_ID_CODE, count(*) 
+ from RUPSNCPDP_DETAIL_SCRIPT
+ WHERE CPR_NUM = 80095
+  AND HFLT_HDR_NUM = 19477
+  AND DFLT_PLAN_ID_CODE IN ('31','32','34','198','2587') 
+  group by rollup  (DFLT_PLAN_ID_CODE);
+  
+  
+  
+  
+ 	ls -ltr | tail
+  
+********************************************************************************
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 80095
+WHERE CPR_NUM = 80099
+  AND HFLT_HDR_NUM = 19477
+  AND DFLT_PLAN_ID_CODE IN ('31','32','34','198','2587')
+--Total of 35 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 10246
+ WHERE CPR_NUM = 80095;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 1481
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 1481
+ WHERE CPR_NUM = 80099;
+--Total of 1 row updated
+
+
+
+
+
+
+
+---------------------------  Harvard Pilgrim ------------------------------------
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 79891
+WHERE CPR_NUM = 79890
+  AND HFLT_HDR_NUM = 19399
+ 
+--Total of 162 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 1404
+ WHERE CPR_NUM = 79891;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 13
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 108
+ WHERE CPR_NUM = 79890;
+--Total of 1 row updated
+
+
+
+
+
+--------------------------- Sierra Commercial -----------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 79560
+WHERE CPR_NUM = 79561
+  AND HFLT_HDR_NUM = 19441;
+--Total of 31 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 52
+ WHERE CPR_NUM = 79560;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 79561;
+--Total of 1 row updated
+
+
+---------------------------  RX Solutions   -------------------------------------
+
+select DFLT_CUSTOM_FILLER2, count(DFLT_CUSTOM_FILLER2)
+  FROM RUPSNCPDP_DETAIL_SCRIPT
+ WHERE HFLT_HDR_NUM = 19434
+   AND DFLT_PLAN_ID_CODE IS NULL
+  GROUP BY DFLT_CUSTOM_FILLER2  
+
+
+
+
+--------------------------- United Health Group ---------------------------------
+
+select DFLT_PRODUCT_CODE, count(*) from RUPSNCPDP_DETAIL_SCRIPT
+where HFLT_HDR_NUM = 19431
+ and DFLT_PRODUCT_CODE in ('00002759701', '50458030611' , '50458030711' 
+ , '50458030811', '59148001315', '59148001315' , '59148001665')
+ group by rollup (DFLT_PRODUCT_CODE);
+
+
+
+
+select * from RUPSNCPDP_DETAIL_SCRIPT
+where HFLT_HDR_NUM = 19431
+ and DFLT_PRODUCT_CODE = 50458030611;
+
+
+
+
+select DFLT_CUSTOM_FILLER2, count(DFLT_PLAN_ID_CODE)
+  FROM RUPSNCPDP_DETAIL_SCRIPT
+ WHERE HFLT_HDR_NUM = 19431
+   AND DFLT_PLAN_ID_CODE IS NULL
+  GROUP BY DFLT_CUSTOM_FILLER2
+
+
+
+
+---------------------------   Global  Select statments --------------------------
+
+
+Select All DFLT_PRODUCT_CODE, Count(DFLT_PRODUCT_CODE) as product_code
+  from RUPSNCPDP_DETAIL_SCRIPT
+  WHERE CPR_NUM = 79145
+  AND HFLT_HDR_NUM = 19384
+  AND DFLT_PRODUCT_CODE NOT IN ('00186037020' , '00186037220')
+  group by rollup(DFLT_PRODUCT_CODE);
+
+
+Select count(*) from RUPSNCPDP_DETAIL_SCRIPT
+  WHERE CPR_NUM = 79145
+  AND HFLT_HDR_NUM = 19384
+  AND DFLT_PRODUCT_CODE NOT IN ('00186037020' , '00186037220');
+
+
+
+Select * from RUPSNCPDP_DETAIL_SCRIPT
+  WHERE CPR_NUM = 79145
+  AND HFLT_HDR_NUM = 19384
+  AND DFLT_PRODUCT_CODE NOT IN ('00186037020' , '00186037220');
+
+
+Select * from RUPSNCPDP_DETAIL_SCRIPT
+  WHERE CPR_NUM = 79145
+  AND HFLT_HDR_NUM = 19384;
+  
+
+---------------------------   Global  Updates  ----------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET CPR_NUM = 79146
+WHERE CPR_NUM = 79145
+  AND HFLT_HDR_NUM = 19384
+  AND DFLT_PRODUCT_CODE NOT IN ('00186037020' , '00186037220');
+
+--Total of 1040 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 1055
+ WHERE CPR_NUM = 79146;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 13
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 13
+ WHERE CPR_NUM = 79145;
+--Total of 1 row updated
+
+
+
+
+
+
+
+
+---------------------------  CIGNA          -------------------------------------
+
+
+Please perform the following update in cip:
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_THERP_CLASS_CODE = 'Bad'
+WHERE HFLT_HDR_NUM = 19157
+AND	DFLT_CUSTOM_FILLER1 IN ('TDC','TDR')
+AND 	SUBMITTED_PHARM_ID_CODE in (4304096, 3976529);
+--15324 rows updated
+
+*********************************************************************************
+UPDATE rupsncpdp_detail_script
+SET DFLT_THERP_CLASS_CODE = 'BAD'
+WHERE hflt_hdr_num = 19157
+and (SUBMITTED_PHARM_ID_CODE IN ('4304096', 3976529));
+--15324 rows updated
+
+Select COUNT(*) DFLT_THERP_CLASS_CODE, SUBMITTED_PHARM_ID_CODE
+from rupsncpdp_detail_script
+WHERE (hflt_hdr_num = 19157)
+and (SUBMITTED_PHARM_ID_CODE IN ('4304096', 3976529))
+GROUP BY ROLLUP (DFLT_THERP_CLASS_CODE, SUBMITTED_PHARM_ID_CODE);
+
+
+---------------------------    MedImpact    -------------------------------------
+
+SELECT  DISTINCT
+	DFLT_PLAN_NAME,
+	DFLT_FORMULARY_CODE
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+	HFLT_HDR_NUM = 19398
+
+**************************************************
+SELECT DISTINCT
+	DFLT_PLAN_ID_CODE,
+	DFLT_CUSTOM_FILLER1,
+	DFLT_PRODUCT_DESC,
+	3157,
+	COUNT(*)
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+		HFLT_HDR_NUM = 19398
+	AND	HFLT_DETAIL_NUM >= 829838948
+	AND	HFLT_DETAIL_NUM < 829848947
+GROUP BY
+	DFLT_PLAN_ID_CODE,
+	DFLT_CUSTOM_FILLER1,
+	DFLT_PRODUCT_DESC
+ORDER BY
+	DFLT_PRODUCT_DESC
+
+***********************************************************
+
+SELECT DISTINCT
+	DFLT_PLAN_ID_CODE,
+	DFLT_CUSTOM_FILLER1,
+	DFLT_PRODUCT_DESC,
+	3146,
+	COUNT(*)
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+		HFLT_HDR_NUM = 16981
+	AND	HFLT_DETAIL_NUM >= 614295735
+	AND	HFLT_DETAIL_NUM < 614298953
+GROUP BY
+	DFLT_PLAN_ID_CODE,
+	DFLT_CUSTOM_FILLER1,
+	DFLT_PRODUCT_DESC
+ORDER BY
+	DFLT_PRODUCT_DESC
+
+
+
+
+--------------------------- INOVIANT 3Q07   -------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 79016
+WHERE CPR_NUM = 79015
+  AND HFLT_HDR_NUM = 19359;
+--Total of 52 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 434
+ WHERE CPR_NUM = 79016;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 79015;
+--Total of 1 row updated
+
+
+
+
+
+
+
+--------------------------- INOVIANT Symbicort 3Q07-------------------------------
+
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET CPR_NUM = 79006
+WHERE CPR_NUM = 79007
+  AND HFLT_HDR_NUM = 19362;
+--Total of 6 rows updated
+
+--New CPR total line count being set to the combined cpr total lines
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 334
+ WHERE CPR_NUM = 79006;
+--Total of 1 row updated
+
+-- Old CPR Total line count being set to 0
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 79007;
+--Total of 1 row updated
+
+
+
+
+
+**********************************************
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 17436,	
+        HFLT_HDR_NUM = 19359
+WHERE HFLT_HDR_NUM = 19361
+   AND   SUBM_HDR_NUM  = 17437;
+   --Total of 1812 rows updated
+
+   
+   
+  UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 17438,	
+        HFLT_HDR_NUM = 19362
+WHERE HFLT_HDR_NUM = 19364
+   AND   SUBM_HDR_NUM  = 17439;
+   --Total of 40 rows updated
+    
+   
+---------------------------                 -------------------------------------
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MAPD EVERCARE'
+WHERE hflt_hdr_num = 18916
+AND DFLT_CUSTOM_FILLER2 = 'MPD-EVCRM7';
+
+
+
+Select *
+from RUPSNCPDP_DETAIL_SCRIPT
+WHERE hflt_hdr_num = 18916
+AND DFLT_CUSTOM_FILLER2 = 'MPD-EVCRM7';
+
+---------------------------     Null        -------------------------------------
+
+Select *
+from RUPSNCPDP_DETAIL_SCRIPT
+WHERE HFLT_HDR_NUM = 18916 and DFLT_PLAN_ID_CODE is null
+
+
+
+
+---------------------------     Distinct    -------------------------------------
+
+Select distinct DFLT_PLAN_ID_CODE
+from RUPSNCPDP_DETAIL_SCRIPT
+WHERE HFLT_HDR_NUM = 18916
+
+
+
+--------------------------- Innoviant       -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 17085,	
+        HFLT_HDR_NUM = 18877
+WHERE HFLT_HDR_NUM = 18879
+   AND   SUBM_HDR_NUM  = 17087;
+
+
+-- 1707 rows updated
+
+
+-----------------------   BCBS Alabama 8/21/07 ----------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  SUBM_HDR_NUM = 17062,	
+        HFLT_HDR_NUM = 18843
+WHERE HFLT_HDR_NUM = 18844
+   AND   SUBM_HDR_NUM  = 17063;
+
+-- 5711 rows updated  
+
+
+
+Select Count(*) from rupsncpdp_detail_script
+WHERE hflt_hdr_num = 18844
+
+
+---------------------------   CIGNA         -------------------------------------
+
+
+Select COUNT(*) DFLT_THERP_CLASS_CODE, SUBMITTED_PHARM_ID_CODE
+from rupsncpdp_detail_script
+WHERE (hflt_hdr_num = 18741)
+and (SUBMITTED_PHARM_ID_CODE IN ('4304096', 3976529)) 
+GROUP BY ROLLUP (DFLT_THERP_CLASS_CODE, SUBMITTED_PHARM_ID_CODE);
+
+---------------------------                 -------------------------------------
+
+Select Count(*) DFLT_THERP_CLASS_CODE 
+from rupsncpdp_detail_script
+WHERE (hflt_hdr_num = 18741)
+and (SUBMITTED_PHARM_ID_CODE IN ('4304096', 3976529)) 
+
+---------------------------                 -------------------------------------
+     
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_THERP_CLASS_CODE = 'BAD'
+WHERE hflt_hdr_num = 18741
+and (SUBMITTED_PHARM_ID_CODE IN ('4304096', 3976529));
+--27064 rows updated
+
+
+
+---------------------------   PRESBYTERIAN   -------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+       SUBM_HDR_NUM = 16957,	
+        HFLT_HDR_NUM = 18694	
+WHERE HFLT_HDR_NUM = 18695
+   AND   SUBM_HDR_NUM  = 16958;
+   
+--Total of 13980 rows updated
+
+
+
+
+
+
+--------------------------- NMHC Rx                -------------------------------------
+
+select count(*) from rupsncpdp_detail_script
+WHERE hflt_hdr_num = 17419
+and DFLT_DATE_FILLED < '20060701';
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_CUSTOM_FILLER2 = 'OLD'
+WHERE hflt_hdr_num = 18653
+
+;
+--422 rows updated
+
+
+
+
+---------------- Medco ----------------------------------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17493;
+-- 97166 rows updated
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17496;
+-- 126396 rows updated
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17500;
+-- 213034 rows updated 
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17507;
+-- 392891 rows updated Crestor
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17491;
+-- 1699386 rows updated Toprol
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17512;
+-- 1699386 rows updated Nexium
+
+
+------------ Health Partners of Philadelphia ------------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17566;
+-- 7581 rows updated Commercial
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17568;
+-- 790 rows updated Medicare Part D
+
+
+
+
+---------------------------- United health care ---------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17582;
+-- 123012 rows updated.
+
+
+
+
+
+
+----------------------- Innoviant -----------------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 16152,	
+        HFLT_HDR_NUM = 17593
+WHERE HFLT_HDR_NUM = 17592
+   AND   SUBM_HDR_NUM  = 16153;
+
+--Total of 1309 rows updated
+
+
+
+------------------------ Coventry -----------------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+       SUBM_HDR_NUM = 16069,	
+        HFLT_HDR_NUM = 17472	
+WHERE HFLT_HDR_NUM = 17473
+   AND   SUBM_HDR_NUM  = 16071;
+   
+--Total of 52509 rows updated
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+       SUBM_HDR_NUM = 16069,	
+        HFLT_HDR_NUM = 17472	
+WHERE HFLT_HDR_NUM = 17470
+   AND   SUBM_HDR_NUM  = 16070;
+   
+--Total of 2078 rows updated
+
+
+
+
+------------------------ KeyStone Mercy -----------------------------------------
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17601;
+-- 60650 rows updated
+
+
+
+
+
+
+------------------------ Argus Medicare Part D-----------------------------------
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17606;
+-- 528 rows updated
+
+
+
+
+--------------------------- Global Services -------------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17629;
+- 30260 rows updated.
+
+
+---------------------------       HMSA      -------------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17634;
+-- 26282 rows updated.
+
+
+
+---------------------------  Scott & White Health Plan Medicare Part D  ---------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17650;
+-- 3930 rows updated.
+
+
+
+
+
+--------------------------- HEALTH ALLIANCE PLAN  -------------------------------
+ Part 1 0f 2
+ 
+ UPDATE rupsncpdp_detail_script
+ SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+ WHERE hflt_hdr_num = 17674;
+ -- 5110 rows updated.
+
+ 
+ 
+ Part 2 of 2
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17672;
+-- 1340 rows updated.
+
+
+---------------------------  Envision Pharmaceutical Services  ------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17676;
+-- 36851 rows updated
+
+
+
+
+
+
+--------------------------------- UPMC ------------------------------------------
+-- Part 1 of 3
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17680;
+-- 24142 rows updated.
+
+
+
+
+-- Part 2 of 3
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17678;
+-- 35504 rows updated.
+
+
+
+
+-- Part 3 of 3
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17677;
+-- 15412 rows updated.
+
+
+
+
+
+---------------------------  Health Plus of MI ----------------------------------
+
+-- Part 1 of 2
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17685;
+-- 42442 rows updated
+
+
+
+-- Part 2 of 2
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17683;
+-- 223 rows updated
+
+
+---------------------------  Summit Health  -------------------------------------
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+ WHERE hflt_hdr_num = 17690;
+-- 241 rows updated.
+
+
+
+
+
+
+---------------------------  VISTA Med Part D -----------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+ WHERE hflt_hdr_num = 17692;
+--  7741 rows updated.
+
+
+
+---------------------------    Coventry     -------------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17695;
+-- 182727 rows updated
+
+
+
+
+
+---------------------------   Vista comm    -------------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+ WHERE hflt_hdr_num = 17698;
+-- 10997 rows updated.
+
+
+
+
+---------------------------    Harvard      -------------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17700;
+-- 12576 rows updated
+
+
+
+
+---------------------------     PICA        -------------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17707;
+-- 6965 rows updated.
+
+
+
+
+--------------------------- United health Group  --------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17709;
+-- 623269 rows updated.
+
+
+
+---------------------------    Gateway health -----------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17711;
+-- 4675 rows updated.
+
+
+---------------------------   Gateway health -------------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17713;
+-- 4832 rows updated.
+
+
+
+---------------------------  Innoviant      -------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 16256,	
+        HFLT_HDR_NUM = 17728
+WHERE HFLT_HDR_NUM = 17727
+   AND   SUBM_HDR_NUM  = 16257;
+
+--Total of 1309 rows updated
+
+
+
+
+--------------------------- Health Partners MED Part D --------------------------
+
+-- Part 1 of 2
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17740;
+-- 3879 rows updated
+
+
+
+-- Part 2 of 2
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17742;
+-- 4125 rows updated
+
+
+
+---------------------------     Health Partners Commercial  ---------------------
+
+-- Part 1 of 2
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17749;
+-- 17769 rows updated
+
+
+
+-- Part 2 of 2
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17753;
+-- 17979 rows updated
+
+
+
+
+---------------------------  Argus Together -------------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17755;
+-- 18689 rows updated
+
+
+---------------------------  Pharmacy Benifits ----------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+   SET DFLT_CUSTOM_FILLER1 = 'BAD' 
+WHERE HFLT_HDR_NUM = 17467
+     AND DFLT_DATE_FILLED = '*';
+-- 21491 rows updated.
+
+
+
+
+---------------------------  Harvard         ------------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17771;
+-- 5943 rows updated
+
+
+
+
+
+
+--------------------------- 1Q Gateway Medicare part D  -------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17773;
+--4675 rows updated.
+
+
+
+--------------------------- 2Q Gateway Medicare part D --------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17780;
+--4832 rows updated.
+
+---------------------------   Harvard 1Q06         ------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17782;
+-- 6387 rows updated
+
+
+
+---------------------------   Harvard 2Q06      ---------------------------------
+       
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17784;
+-- 109944 rows updated
+
+
+--------------------------- Coventry medicard Part D ----------------------------
+
+
+
+
+
+
+---------------------------   Coventry  3Q 2006   -------------------------------
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+       SUBM_HDR_NUM = 16302,	
+        HFLT_HDR_NUM = 17793	
+WHERE HFLT_HDR_NUM = 17790
+   AND   SUBM_HDR_NUM  = 16303;
+   
+--Total of 2236 rows updated
+
+
+
+---------------------------  Coventry all Products 3Q06 -------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17793;
+--Total of 58081  rows updated
+
+
+
+
+
+
+---------------------------     Gateway Part D 0306 -----------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+ WHERE hflt_hdr_num = 17805;
+-- 4876 rows updated.
+
+
+
+
+
+---------------------------  Love lace       ------------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17809;
+-- 1821 rows updated.
+
+
+
+
+---------------------------      CIGNA  Medicare    -----------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17816;
+-- 48694 rows updated.
+
+
+
+
+---------------------------  CIGNA Commercial     -------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17818;
+-- 212166 rows updated
+
+
+
+
+
+---------------------------     Health Plus 4q06 -------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17832;
+-- 40929 rows updated
+
+
+
+
+---------------------------   Health Alliance 4Q06   ----------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17837;
+-- 15492 rows updated.
+
+
+
+
+
+---------------------------   Harvard pilgrim 04Q06  -----------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17873;
+-- 2778 rows updated
+
+
+
+---------------------------    Geisinger 04Q06  ---------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17875;
+-- 1824 rows updated.
+
+
+
+---------------------------    Presbyterian Commercial --------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+       SUBM_HDR_NUM = 16372,	
+        HFLT_HDR_NUM = 17882	
+WHERE HFLT_HDR_NUM = 17883
+   AND   SUBM_HDR_NUM  = 16373;
+   
+--Total of 14558 rows updated
+
+
+
+
+
+---------------------------    Keystone       -------------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17886;
+-- 68046 rows updated
+
+
+
+
+
+
+
+---------------------------   Geisinger Health   ---------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17891;
+-- 9812 rows updated.
+
+
+
+
+
+---------------------------      Health Alliance        -------------------------
+
+
+
+-- Part 1 of 2
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17782;
+-- 6387 rows updated
+
+
+
+-- Part 2 of 2
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17784;
+-- 109944 rows updated
+
+
+
+
+---------------------------       Medco     -------------------------------------
+
+
+UPDATE INDUSTRY_IDENTIFIER
+SET NABP_DISPENSER_TYPE_CODE = 5
+WHERE IDENTIFIER = '2905632';
+--Expected results: 1 record updated
+
+
+
+---------------------------      Medco          ----------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER5 = 'BAD RX'
+WHERE
+	HFLT_HDR_NUM IN (17584)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+-- 26 rows updated
+
+
+
+
+
+
+
+
+---------------------------  scarrier Id  Toprol --------------------------------
+
+
+SELECT 
+	DFLT_PLAN_ID_CODE AS 'AZ Plan ID',
+	DFLT_PHARM_ID_CODE AS 'Pharmacy ID',
+	DFLT_PRODUCT_CODE AS 'NDC Code',
+	DFLT_PRODUCT_DESC AS 'Product Name',
+    DFLT_TOT_NUM_PRESCRIPTIONS||DFLT_NUM_PRESCRIPTIONS_SIGN AS 'RX Number Submitted',
+	DFLT_TOT_METRIC_QTY||DFLT_TOT_METRIC_QTY_SIGN AS 'Units Submitted',
+	DFLT_PRESCRIPTION_NUM AS 'Submitted RX Number',
+	DFLT_DATE_FILLED AS 'DATE FILLED',
+	DFLT_CUSTOM_FILLER1 AS 'SCARRIER ID Toprol',
+	DFLT_CUSTOM_FILLER4 AS 'SCARRIER ID Nexium'
+FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+	HFLT_HDR_NUM IN (17910,17911)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+
+
+
+
+
+
+---------------------------  scarrier Id Nexium  --------------------------------
+
+SELECT 
+	DFLT_PLAN_ID_CODE AS 'AZ Plan ID',
+	DFLT_PHARM_ID_CODE AS 'Pharmacy ID',
+	DFLT_PRODUCT_CODE AS 'NDC Code',
+	DFLT_PRODUCT_DESC AS 'Product Name',
+    DFLT_TOT_NUM_PRESCRIPTIONS||DFLT_NUM_PRESCRIPTIONS_SIGN AS 'RX Number Submitted',
+	DFLT_TOT_METRIC_QTY||DFLT_TOT_METRIC_QTY_SIGN AS 'Units Submitted',
+	DFLT_PRESCRIPTION_NUM AS 'Submitted RX Number',
+	DFLT_DATE_FILLED AS 'DATE FILLED',
+	DFLT_CUSTOM_FILLER4 AS 'SCARRIER ID'
+FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+	HFLT_HDR_NUM IN (17910)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+
+
+
+---------------------------- medco seroquel  -----------------------------------
+
+SELECT 
+	DFLT_PLAN_ID_CODE AS 'AZ Plan ID',
+	DFLT_PHARM_ID_CODE AS 'Pharmacy ID',
+	DFLT_PRODUCT_CODE AS 'NDC Code',
+	DFLT_PRODUCT_DESC AS 'Product Name',
+    DFLT_TOT_NUM_PRESCRIPTIONS||DFLT_NUM_PRESCRIPTIONS_SIGN AS 'RX Number Submitted',
+	DFLT_TOT_METRIC_QTY||DFLT_TOT_METRIC_QTY_SIGN AS 'Units Submitted',
+	DFLT_PRESCRIPTION_NUM AS 'Submitted RX Number',
+	DFLT_DATE_FILLED AS 'DATE FILLED',
+	DFLT_CUSTOM_FILLER1 AS 'SCARRIER ID'
+FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+	HFLT_HDR_NUM IN (17924)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+
+ 
+
+
+
+---------------------------  Medco Rhinocort  --------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17915;
+-- 146720 rows updated
+
+
+
+
+
+
+
+
+---------------------------  Medco Zomig   -------------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17916;
+-- 101870 rows updated
+
+
+
+
+
+
+
+
+---------------------------  Argus  4Q2006      ---------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17935;
+-- 507 rows updated
+
+
+
+
+
+
+
+---------------------------     HMSA            -------------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17967;
+-- 6094 rows updated.
+
+
+
+
+
+---------------------------                 -------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET   SUBM_HDR_NUM = 16424,	
+      HFLT_HDR_NUM = 17971	
+WHERE HFLT_HDR_NUM = 17969;
+-- 2749 rows updated.
+      
+
+UPDATE RUPSNCPDP_DETAIL
+SET SUBM_HDR_NUM = 16424,
+    HFLT_HDR_NUM = 17970              
+WHERE HFLT_HDR_NUM = 17968;
+
+-- 783 rows updated
+
+
+
+---------------------------                 -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 16426,	
+        HFLT_HDR_NUM = 17973
+WHERE HFLT_HDR_NUM = 17976
+   AND   SUBM_HDR_NUM  = 16428;
+
+
+
+
+
+
+---------------------------                 -------------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17989;
+-- 3405 rows updated.
+
+
+
+
+
+---------------------------   coventry 4q06      -------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17993;
+-- 171378 rows updated
+
+
+
+---------------------------     BS of California       -------------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18036;
+-- 44344 rows updated.
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 16998;
+-- 3853 rows updated.
+
+
+
+
+---------------------------   FirstCare                -----------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 16827;
+-- 109944 rows updated
+
+
+
+---------------------------                 -------------------------------------
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18045;
+-- 103832 rows updated all products
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18041;
+-- 1054 rows updated pulmicort 88
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18043;
+-- 1459 rows updated pulmicort 79
+
+---------------------------   MedAssets       -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  SUBM_HDR_NUM = 16495,	
+        HFLT_HDR_NUM = 18070	
+WHERE HFLT_HDR_NUM = 18059
+   AND CPR_NUM IN (65646,65647)
+   AND   SUBM_HDR_NUM  = 16479;
+--Total of 15655 rows updated
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  SUBM_HDR_NUM = 16495,	
+        HFLT_HDR_NUM = 18070	
+WHERE HFLT_HDR_NUM = 18063
+   AND   SUBM_HDR_NUM  = 16481;
+--Total of 12908 rows updated
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  SUBM_HDR_NUM = 16495,	
+        HFLT_HDR_NUM = 18070	
+WHERE HFLT_HDR_NUM = 18062
+   AND   SUBM_HDR_NUM  = 16481;
+--Total of 12908 rows updated
+
+---------------------------                 -------------------------------------
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18066;
+-- 7622 rows updated Medicare Part D
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18051;
+-- 21804 rows updated Medicare Part D option 2
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18058;
+-- 1472 rows updated Medicare Part D option 3
+
+
+---------------------------     MedAssets 04Q06 --------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  SUBM_HDR_NUM = 16523,	
+        HFLT_HDR_NUM = 18105	
+WHERE HFLT_HDR_NUM = 18101
+   AND   SUBM_HDR_NUM  = 16521;
+--Total of 34074 rows updated --Diamond
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  SUBM_HDR_NUM = 16523,	
+        HFLT_HDR_NUM = 18105	
+WHERE HFLT_HDR_NUM = 18103
+   AND   SUBM_HDR_NUM  = 16522;
+--Total of 12626 rows updated -- PharmaCorr
+
+UPDATE RUPSNCPDP_DETAIL
+SET  SUBM_HDR_NUM = 16523,	
+        HFLT_HDR_NUM = 18104
+WHERE HFLT_HDR_NUM = 18102
+   AND   SUBM_HDR_NUM  = 16522;
+--Total of 178 rows updated -- PharmaCorr sum
+
+
+
+
+
+
+
+
+
+---------------------------    RX America       -------------------------------------
+
+
+UPDATE rupsncpdp_detail_script rds
+   SET CM_PRODUCT_ID = (SELECT p.parent_product_id
+                          from products p
+                         WHERE rds.DFLT_PRODUCT_CODE = p.product_ndc)
+WHERE
+		rds.HFLT_HDR_NUM = 18106
+	AND	rds.CPR_NUM = 66285
+	AND	rds.CM_PRODUCT_ID = '3553'
+	AND	DFLT_PLAN_ID_CODE <> '7027'
+-- Total of 10 rows updated
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  CPR_NUM = 66304
+WHERE HFLT_HDR_NUM = 18106
+   AND CPR_NUM IN (66285)
+   AND DFLT_PLAN_ID_CODE <> '7027';
+--Total of 11 rows updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 5243
+ WHERE CPR_NUM = 66304;         
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 530
+ WHERE CPR_NUM = 66285;         
+--Total of 1 row updated
+
+
+
+
+
+---------------------------                 -------------------------------------
+
+
+SELECT 
+	DFLT_PLAN_ID_CODE AS 'AZ Plan ID',
+	DFLT_PHARM_ID_CODE AS 'Pharmacy ID',
+	DFLT_PRODUCT_CODE AS 'NDC Code',
+	DFLT_PRODUCT_DESC AS 'Product Name',
+    DFLT_TOT_NUM_PRESCRIPTIONS||DFLT_NUM_PRESCRIPTIONS_SIGN AS 'RX Number Submitted',
+	DFLT_TOT_METRIC_QTY||DFLT_TOT_METRIC_QTY_SIGN AS 'Units Submitted',
+	DFLT_PRESCRIPTION_NUM AS 'Submitted RX Number',
+	DFLT_DATE_FILLED AS 'DATE FILLED',
+	DFLT_CUSTOM_FILLER1 AS 'SCARRIER ID'
+FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+	HFLT_HDR_NUM IN (18109)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+
+******************************************************
+
+SELECT 
+	DFLT_PLAN_ID_CODE AS 'AZ Plan ID',
+	DFLT_PHARM_ID_CODE AS 'Pharmacy ID',
+	DFLT_PRODUCT_CODE AS 'NDC Code',
+	DFLT_PRODUCT_DESC AS 'Product Name',
+    DFLT_TOT_NUM_PRESCRIPTIONS||DFLT_NUM_PRESCRIPTIONS_SIGN AS 'RX Number Submitted',
+	DFLT_TOT_METRIC_QTY||DFLT_TOT_METRIC_QTY_SIGN AS 'Units Submitted',
+	DFLT_PRESCRIPTION_NUM AS 'Submitted RX Number',
+	DFLT_DATE_FILLED AS 'DATE FILLED',
+	DFLT_CUSTOM_FILLER1 AS 'SCARRIER ID'
+FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+	HFLT_HDR_NUM IN (18107)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+
+
+
+
+
+SELECT 
+	DFLT_PLAN_ID_CODE AS 'AZ Plan ID',
+	DFLT_PHARM_ID_CODE AS 'Pharmacy ID',
+	DFLT_PRODUCT_CODE AS 'NDC Code',
+	DFLT_PRODUCT_DESC AS 'Product Name',
+    DFLT_TOT_NUM_PRESCRIPTIONS||DFLT_NUM_PRESCRIPTIONS_SIGN AS 'RX Number Submitted',
+	DFLT_TOT_METRIC_QTY||DFLT_TOT_METRIC_QTY_SIGN AS 'Units Submitted',
+	DFLT_PRESCRIPTION_NUM AS 'Submitted RX Number',
+	DFLT_DATE_FILLED AS 'DATE FILLED',
+	DFLT_CUSTOM_FILLER1 AS 'SCARRIER ID'
+FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+	HFLT_HDR_NUM IN (18098)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+
+---------------------------   Wellpoint              -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER2 = 'BAD RX'
+WHERE
+	HFLT_HDR_NUM IN (18107)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+-- 1502 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER2 = 'BAD RX'
+WHERE
+	HFLT_HDR_NUM IN (18109)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+-- 22 rows updated
+
+
+---------------------------  RX Solutions   -------------------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  SUBM_HDR_NUM = 16509,	
+        HFLT_HDR_NUM = 18088	
+WHERE HFLT_HDR_NUM = 18112
+   AND   SUBM_HDR_NUM  = 16530;
+--Total of 4904 rows updated --RX Solutions
+
+
+
+
+---------------------------                 -------------------------------------
+
+
+UPDATE rupsncpdp_detail_script rds
+SET CM_PRODUCT_ID = (SELECT p.parent_product_id
+                     from products p
+                     WHERE rds.DFLT_PRODUCT_CODE = p.product_ndc)
+WHERE
+		rds.HFLT_HDR_NUM = 18106
+	AND	rds.CPR_NUM in (66285, 66304, 66307)
+	
+-- Total of 10 rows updated
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  CPR_NUM = 66285
+WHERE HFLT_HDR_NUM = 18106
+   AND CPR_NUM IN (66287)
+   AND DFLT_PLAN_ID_CODE = '7027';
+--Total of 19 rows updated
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  CPR_NUM = 66307
+WHERE HFLT_HDR_NUM = 18106
+   AND CPR_NUM IN (66287)
+   AND DFLT_PLAN_ID_CODE = '0719';
+--Total of 1 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  CPR_NUM = 66304
+WHERE HFLT_HDR_NUM = 18106
+   AND CPR_NUM IN (66287)
+   AND DFLT_PLAN_ID_CODE <> '0719' and DFLT_PLAN_ID_CODE <> '7027'; 
+--Total of 205 rows updated
+
+
+
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 0
+ WHERE CPR_NUM = 66287;         
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 549
+ WHERE CPR_NUM = 66285;         
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 10
+ WHERE CPR_NUM = 66307;         
+--Total of 1 row updated
+
+UPDATE rupsclaim_parse_results
+   SET LINE_COUNT = 5448
+ WHERE CPR_NUM = 66304;         
+--Total of 1 row updated
+
+
+
+
+---------------------------                 -------------------------------------
+
+
+select CPR_NUM, DFLT_PLAN_ID_CODE 
+from RUPSNCPDP_DETAIL_SCRIPT
+where HFLT_HDR_NUM = 18106
+   AND CPR_NUM IN (66287)
+   AND DFLT_PLAN_ID_CODE <> '0719' and DFLT_PLAN_ID_CODE <> '7027'; 
+--Total of 205 rows updated
+
+
+
+
+
+
+---------------------------                 -------------------------------------
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18114;
+-- 39637 rows updated.
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18122;
+-- 25112 rows updated.
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18123;
+-- 18335 rows updated.
+
+
+
+
+---------------------------        coventry 4Q06 -------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+       SUBM_HDR_NUM = 16543,	
+        HFLT_HDR_NUM = 18128	
+WHERE HFLT_HDR_NUM = 18126
+   AND   SUBM_HDR_NUM  = 16544;
+   
+--Total of 2427 rows updated
+
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18128;
+-- 171378 rows updated
+
+
+
+---------------------------  MHA 4Q06       -------------------------------------
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18129;
+-- 222812 rows updated
+
+
+
+
+
+
+---------------------------                 -------------------------------------
+Bob,
+
+I need the following DB request run so that Tracy can continue processing the 4Q06 claim.  Thank you.
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+ WHERE hflt_hdr_num = 18131;
+-- 5105 rows updated.
+
+Jeffrey,
+
+
+
+
+
+
+---------------------------  Medimpact 79 - 88  ---------------------------------
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18141;
+--  480 rows updated for sub Pulm 79
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18141;
+--  1414 rows updated for sub Pulm 88
+
+---------------------------                 -------------------------------------
+
+Bob,
+
+I need the following DB request run so that Nancy can continue processing the 4Q06 claim.  (This is part 2 of 2). 
+
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18148;
+-- 62736 rows updated
+
+Jeffrey
+
+
+
+
+
+
+---------------------------   Medicaid drug rebate CA ---------------------------
+
+
+--REMOVE LEADING ZEROES rx numbers with length greater then 7 digits
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = ltrim(DFLT_PRESCRIPTION_NUM,'0')
+WHERE hflt_hdr_num = 18155;
+-- 33459 rows updated.
+
+
+
+
+--ADD LEADING ZEROES
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18155
+and length(DFLT_PRESCRIPTION_NUM) < 7;
+-- 33459 rows updated.
+
+
+---------------------------     Argus            -------------------------------------
+
+Bob, 
+
+I need the following DB request run so that Sue can continue processing the 4Q06 claim.  Thank you.
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 18198;
+-- 18689 rows updat18198ed
+
+
+Jeffrey,
+
+
+
+
+
+---------------------------   Presbyterian -------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+       SUBM_HDR_NUM = 16611,	
+        HFLT_HDR_NUM = 18223	
+WHERE HFLT_HDR_NUM = 18224
+   AND   SUBM_HDR_NUM  = 16610;
+   
+-- 16920 rows updated.
+
+
+
+---------------------------    Cigna   Medicare Part D ----------------------
+
+
+select rsh.subm_description as "Submission Desc.", 
+       rds.DFLT_PRESCRIPTION_NUM as "RX Num", 
+	   rds.DFLT_DATE_FILLED as "Date Filled", 
+	   rds.DFLT_TOT_METRIC_QTY as "Units", 
+	   rds.DFLT_PRODUCT_CODE as "Product Code", 
+	   rds.DFLT_PRODUCT_DESC as "Product Name", 
+	   rds.DFLT_PHARM_ID_CODE as "Pharmacy Id", 
+	   rds.DFLT_PLAN_NAME as "Plan Name",
+	   null as "Ingredient Cost",
+	   null as "Cost Paid by Cigna",
+	   null as "Co-Pay Y/N",
+	   null as "Co-Pay Amt Collected by Cigna",
+	   rds.DFLT_CLAIM_NUM as "Claim Number"
+  from rupssubm_hdr rsh, 
+       rupsscripterr rse,
+       rupsncpdp_detail_script rds
+where  rds.hflt_hdr_num = 18245
+  and  rds.hflt_hdr_num = rse.hflt_hdr_num
+  and  rds.hflt_detail_num = rse.hflt_detail_num
+  and  rds.subm_hdr_num = rsh.subm_hdr_num
+  and  rds.hflt_hdr_num = rsh.detail_hflt_hdr_num
+  and  rse.error_num = 30002
+  and  rse.DFLT_STATUS_NUM in (1010,1012,1013)
+  and  rds.DFLT_USER_ACTION in (1001)
+ order by substr(DFLT_PRODUCT_DESC, 1, 5);
+
+
+
+
+
+
+
+
+
+
+--------------------------- CIGNA COMMERCIAL --------------------------------
+
+
+select rsh.subm_description as "Submission Desc.", 
+       rds.DFLT_PRESCRIPTION_NUM as "RX Num", 
+	   rds.DFLT_DATE_FILLED as "Date Filled", 
+	   rds.DFLT_TOT_METRIC_QTY as "Units", 
+	   rds.DFLT_PRODUCT_CODE as "Product Code", 
+	   rds.DFLT_PRODUCT_DESC as "Product Name", 
+	   rds.DFLT_PHARM_ID_CODE as "Pharmacy Id", 
+	   rds.DFLT_PLAN_NAME as "Plan Name",
+	   null as "Ingredient Cost",
+	   null as "Cost Paid by Cigna",
+	   null as "Co-Pay Y/N",
+	   null as "Co-Pay Amt Collected by Cigna",
+	   rds.DFLT_CLAIM_NUM as "Claim Number"
+  from rupssubm_hdr rsh, 
+       rupsscripterr rse,
+       rupsncpdp_detail_script rds
+where  rds.hflt_hdr_num = 18296
+  and  rds.hflt_hdr_num = rse.hflt_hdr_num
+  and  rds.hflt_detail_num = rse.hflt_detail_num
+  and  rds.subm_hdr_num = rsh.subm_hdr_num
+  and  rds.hflt_hdr_num = rsh.detail_hflt_hdr_num
+  and  rse.error_num = 30002
+  and  rse.DFLT_STATUS_NUM in (1010,1012,1013)
+  and  rds.DFLT_USER_ACTION in (1001)
+ order by substr(DFLT_PRODUCT_DESC, 1, 5);
+
+
+
+
+
+
+
+
+
+---------------------------  Medco Alpha characters in RX Number   ----------------
+
+SELECT * FROM RUPSNCPDP_DETAIL_SCRIPT 
+WHERE
+	HFLT_HDR_NUM IN (18536)
+AND length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+
+
+
+----------------------------------------------------------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER5 = 'BAD RX'
+WHERE
+	HFLT_HDR_NUM IN (18446)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0
+-- 26 rows updated
+
+------------------------------------------------------------------------------------
+
+
+SELECT 
+	DFLT_PLAN_ID_CODE AS 'AZ Plan ID',
+	DFLT_PHARM_ID_CODE AS 'Pharmacy ID',
+	DFLT_PRODUCT_CODE AS 'NDC Code',
+	DFLT_PRODUCT_DESC AS 'Product Name',
+    DFLT_TOT_NUM_PRESCRIPTIONS||DFLT_NUM_PRESCRIPTIONS_SIGN AS 'RX Number Submitted',
+	DFLT_TOT_METRIC_QTY||DFLT_TOT_METRIC_QTY_SIGN AS 'Units Submitted',
+	DFLT_PRESCRIPTION_NUM AS 'Submitted RX Number',
+	DFLT_DATE_FILLED AS 'DATE FILLED',
+	DFLT_CUSTOM_FILLER1 AS 'SCARRIER ID',
+	DFLT_FORMULARY_CODE AS 'FORMULARY_CODE'
+FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+	HFLT_HDR_NUM IN (18808)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+
+
+
+SELECT Distinct DFLT_CUSTOM_FILLER1 AS 'SCARRIER ID',
+	DFLT_PLAN_ID_CODE AS 'AZ Plan ID',
+	DFLT_FORMULARY_CODE AS 'FORMULARY_CODE'
+FROM RUPSNCPDP_DETAIL_SCRIPT
+WHERE
+	HFLT_HDR_NUM IN (18808)
+-----------------------------------------------------------------------------------
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET dflt_custom_filler5 =  ‘BAD RX’
+WHERE hflt_hdr_num = 18401
+AND length(translate(trim(dflt_prescription_num),' +-.0123456789',' ')) > 0;
+--2 rows updated
+
+
+
+
+----------------------------------------------------------------------------------
+ UPDATE RUPSNCPDP_DETAIL_SCRIPT
+ SET DFLT_PLAN_ID_CODE = 'MEDCORETAIL'
+ WHERE hflt_hdr_num = 18440
+ AND DFLT_DATE_FILLED < 20070101
+ AND DFLT_PLAN_ID_CODE = 'CUSTOMEQLR';
+ -- 14,430 rows updated
+ 
+ UPDATE RUPSNCPDP_DETAIL_SCRIPT
+ SET DFLT_PLAN_ID_CODE = 'MEDCOMAIL'
+ WHERE hflt_hdr_num = 18440
+ AND DFLT_DATE_FILLED < 20070101
+ AND DFLT_PLAN_ID_CODE = 'CUSTOMEQLM';
+-- 684 rows updated
+
+
+
+
+
+
+
+---------------------------   Medco  Nexium  -----------------------------------
+select count(*) DFLT_FORMULARY_CODE, DFLT_FORMULARY_CODE, 
+DFLT_PLAN_ID_CODE, DFLT_PLAN_ID_QUALIFIER 
+from RUPSNCPDP_DETAIL_SCRIPT
+WHERE hflt_hdr_num = 18473
+AND DFLT_DATE_FILLED > 20061231
+GROUP BY DFLT_FORMULARY_CODE, DFLT_PLAN_ID_CODE 
+
+select count(*) DFLT_FORMULARY_CODE, DFLT_FORMULARY_CODE,
+DFLT_PLAN_ID_CODE  
+from RUPSNCPDP_DETAIL
+WHERE hflt_hdr_num = 18472
+GROUP BY DFLT_FORMULARY_CODE, DFLT_PLAN_ID_CODE 
+
+=====================================================
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER5 = 'BAD RX'
+WHERE
+	HFLT_HDR_NUM IN (18473)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0
+-- 26 rows updated
+
+
+SCRIPT LEVEL
+-----------------------------
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA063'
+WHERE hflt_hdr_num = 18473
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 063;
+-- 102 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA064'
+WHERE hflt_hdr_num = 18473
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 064;
+-- 1 rows updated
+ 
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA108'
+WHERE hflt_hdr_num = 18473
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 108;
+-- 39 rows updated
+  
+ 
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA109'
+WHERE hflt_hdr_num = 18473
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 109;
+-- 233 rows updated
+ 
+ 
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA123'
+WHERE hflt_hdr_num = 18473
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 123;
+-- 1 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA206'
+WHERE hflt_hdr_num = 18473
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 206;
+-- 141 rows updated
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA848'
+WHERE hflt_hdr_num = 18473
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 848;
+-- 15 rows updated
+ 
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA902'
+WHERE hflt_hdr_num = 18473
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 902;
+-- 1 rows updated
+
+ 
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSMAIL063'
+WHERE hflt_hdr_num = 18473
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'M'
+AND DFLT_FORMULARY_CODE = 063;
+-- 24 rows updated 
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSMAIL109'
+WHERE hflt_hdr_num = 18473
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'M'
+AND DFLT_FORMULARY_CODE = 109;
+-- 12 rows updated 
+
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSMAIL848'
+WHERE hflt_hdr_num = 18473
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'M'
+AND DFLT_FORMULARY_CODE = 848;
+-- 2 rows updated 
+
+
+
+
+
+
+
+
+++++++++++++++++New code as of 6/12/2007+++++++++++++++++++++++++++++++
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET DFLT_PLAN_ID_CODE = 'CUSTOM001R'
+WHERE hflt_hdr_num = 18472
+AND DFLT_PLAN_ID_CODE = 'MHSRETA001'
+AND DFLT_FORMULARY_CODE = 001;
+-- 1661 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET DFLT_PLAN_ID_CODE = 'CUSTOM001M'
+WHERE hflt_hdr_num = 18472
+AND DFLT_PLAN_ID_CODE = 'MHSMAIL001'
+AND DFLT_FORMULARY_CODE = 001;
+-- 439 rows updated 
+
+
+ 
+ 
+---------------------------  Medco Atacand  -----------------------------------
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MEDCOMAIL' ,
+      CM_PLAN_ID = 11000009999
+WHERE HFLT_HDR_NUM = 18811
+   AND   SUBM_HDR_NUM  = 17037
+   AND   DFLT_PLAN_ID_CODE = 'MHSMAIL001'
+   AND  CPR_NUM IN (73561, 73562) ;
+  --Total of 177 rows updated
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MEDCORETAIL' ,
+      CM_PLAN_ID = 145861001
+WHERE HFLT_HDR_NUM = 18811
+   AND   SUBM_HDR_NUM  = 17037
+   AND   DFLT_PLAN_ID_CODE = 'MHSRETA001' 
+  AND  CPR_NUM IN (73561, 73562) ;
+  --Total of 113 rows updated
+
+
+********************************************
+
+
+
+select count(*) from RUPSNCPDP_DETAIL_SCRIPT
+
+select count(*) from RUPSNCPDP_DETAIL 
+
+ 
+select count(*) DFLT_FORMULARY_CODE, DFLT_FORMULARY_CODE,
+DFLT_PLAN_ID_CODE 
+from RUPSNCPDP_DETAIL_SCRIPT
+WHERE hflt_hdr_num = 18439
+AND DFLT_DATE_FILLED < 20070101
+GROUP BY DFLT_FORMULARY_CODE,  
+
+select count(*) DFLT_FORMULARY_CODE, DFLT_FORMULARY_CODE,
+DFLT_PLAN_ID_CODE 
+from RUPSNCPDP_DETAIL
+WHERE hflt_hdr_num = 18439
+GROUP BY DFLT_FORMULARY_CODE,  
+===================================================
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MEDCORETAIL'
+WHERE hflt_hdr_num = 18470
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'CUSTOMEQLR';
+-- 6198 rows updated
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MEDCOMAIL'
+WHERE hflt_hdr_num = 18470
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'CUSTOMEQLM';
+-- 1126 rows updated
+
+UPDATE RUPSNCPDP_DETAIL
+SET DFLT_PLAN_ID_CODE = 'MEDCORETAIL'
+WHERE hflt_hdr_num = 18469
+AND DFLT_PLAN_ID_CODE = 'R';
+-- 5032 rows updated
+
+UPDATE RUPSNCPDP_DETAIL
+SET DFLT_PLAN_ID_CODE = 'MEDCOMAIL'
+WHERE hflt_hdr_num = 18469
+AND DFLT_PLAN_ID_CODE = 'M';
+-- 1809 rows updated
+
+
+
+
+
+---------------------------  Medco Toprol  -------------------------------------
+
+
+select count(*) DFLT_FORMULARY_CODE, DFLT_FORMULARY_CODE,
+DFLT_PLAN_ID_CODE 
+from RUPSNCPDP_DETAIL_SCRIPT
+WHERE hflt_hdr_num = 18496
+AND DFLT_DATE_FILLED < 20070101
+GROUP BY DFLT_FORMULARY_CODE, DFLT_PLAN_ID_CODE  
+
+select count(*) DFLT_FORMULARY_CODE, DFLT_FORMULARY_CODE,
+DFLT_PLAN_ID_CODE 
+from RUPSNCPDP_DETAIL
+WHERE hflt_hdr_num = 18495
+GROUP BY DFLT_FORMULARY_CODE, DFLT_PLAN_ID_CODE 
+=============================Medco Toprol db updates ======================
+
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER5 = 'BAD RX'
+WHERE
+	HFLT_HDR_NUM IN (18496)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0
+-- 95 rows updated
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA001'
+WHERE hflt_hdr_num = 18496
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'CUSTOM001R';
+-- 34893 rows updated
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSMAIL001'
+WHERE hflt_hdr_num = 18496
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'CUSTOM001M';
+-- 711 rows updated
+
+
+
+***********************
+Summary table
+
+UPDATE RUPSNCPDP_DETAIL
+SET DFLT_PLAN_ID_CODE = 'CUSTOM001M'
+WHERE hflt_hdr_num = 18495
+AND DFLT_PLAN_ID_CODE = 'MHSMAIL001'
+AND DFLT_FORMULARY_CODE = 001;
+-- 2342 rows updated 
+
+
+UPDATE RUPSNCPDP_DETAIL
+SET DFLT_PLAN_ID_CODE = 'CUSTOM001R'
+WHERE hflt_hdr_num = 18495
+AND DFLT_PLAN_ID_CODE = 'MHSRETA001'
+AND DFLT_FORMULARY_CODE = 001;
+-- 9878 rows updated
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MEDCORETAIL'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'CUSTOM001R';
+-- 34893 rows updated
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MEDCOMAIL'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'CUSTOM001M';
+-- 711 rows updated
+
+
+select count(*) DFLT_FORMULARY_CODE, DFLT_FORMULARY_CODE, 
+DFLT_PLAN_ID_CODE
+from RUPSNCPDP_DETAIL_SCRIPT
+WHERE hflt_hdr_num = 18473
+GROUP BY DFLT_FORMULARY_CODE, DFLT_PLAN_ID_CODE 
+
+---------------------  Medco Nexium as of 6/15/2007 -----------------------------
+
+
+
+select count(*) DFLT_FORMULARY_CODE, DFLT_FORMULARY_CODE, 
+DFLT_PLAN_ID_CODE
+from RUPSNCPDP_DETAIL_SCRIPT
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+GROUP BY DFLT_FORMULARY_CODE, DFLT_PLAN_ID_CODE 
+
+select count(*) DFLT_FORMULARY_CODE, DFLT_FORMULARY_CODE,
+DFLT_PLAN_ID_CODE  
+from RUPSNCPDP_DETAIL
+WHERE hflt_hdr_num = 18535
+GROUP BY DFLT_FORMULARY_CODE, DFLT_PLAN_ID_CODE 
+
+
+
+select count(*) DFLT_FORMULARY_CODE, DFLT_FORMULARY_CODE, 
+DFLT_PLAN_ID_CODE
+from RUPSNCPDP_DETAIL_SCRIPT
+WHERE hflt_hdr_num = 18536
+GROUP BY DFLT_FORMULARY_CODE, DFLT_PLAN_ID_CODE 
+
+
+
+=====================================================
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER5 = 'BAD RX'
+WHERE
+	HFLT_HDR_NUM IN (18536)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0
+-- 26 rows updated
+
+
+SCRIPT LEVEL
+-----------------------------
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA001'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'CUSTOM001R';
+-- 34893 rows updated
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSMAIL001'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'CUSTOM001M';
+-- 711 rows updated
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA063'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 063;
+-- 102 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA064'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 064;
+-- 1 rows updated
+ 
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA108'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 108;
+-- 39 rows updated
+  
+ 
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA109'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 109;
+-- 233 rows updated
+ 
+ 
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA123'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 123;
+-- 1 rows updated
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA206'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 206;
+-- 141 rows updated
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA848'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 848;
+-- 15 rows updated
+ 
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSRETA902'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'R'
+AND DFLT_FORMULARY_CODE = 902;
+-- 1 rows updated
+
+ 
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSMAIL063'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'M'
+AND DFLT_FORMULARY_CODE = 063;
+-- 24 rows updated 
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSMAIL109'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'M'
+AND DFLT_FORMULARY_CODE = 109;
+-- 12 rows updated 
+
+
+
+
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_PLAN_ID_CODE = 'MHSMAIL848'
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+AND DFLT_PLAN_ID_CODE = 'M'
+AND DFLT_FORMULARY_CODE = 848;
+-- 2 rows updated 
+
+
+---------------------------                 -------------------------------------
+select count(*) DFLT_PLAN_ID_CODE, DFLT_PLAN_ID_CODE
+from RUPSNCPDP_DETAIL_SCRIPT
+WHERE hflt_hdr_num = 18536
+AND DFLT_DATE_FILLED < 20070101
+GROUP BY DFLT_FORMULARY_CODE, DFLT_PLAN_ID_CODE 
+
+
+
+
+---------------------------  BCBS of Alabama  ----------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  SUBM_HDR_NUM = 16846,	
+        HFLT_HDR_NUM = 18568
+WHERE HFLT_HDR_NUM = 18569
+   AND   SUBM_HDR_NUM  = 16845;
+-- 4999 rows updated 
+
+
+
+---------------------------   Argus together ----------------------------------
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET  SUBM_HDR_NUM = 16900,	
+        HFLT_HDR_NUM = 18622	
+WHERE HFLT_HDR_NUM = 18634
+   AND   SUBM_HDR_NUM  = 16908;
+--Total of 1846 rows updated
+
+
+
+---------------------------  insert empty CPR   -------------------------------
+
+INSERT into  rupsclaim_parse_results
+VALUES
+(rupsclaim_parse_results_seq.nextval,
+	1020,  -- Makes it an Active CPR
+	null,
+ 	'ORIGINAL',  -- If it needs to be and Adjustment ' ADJUST' I beleive is the proper value  but check the table
+	null,
+	'100016191',  -- Contract number 
+	'100016191',  -- Contract number 
+	212491012, -- Org Number
+	to_date('20070401', 'yyyymmdd'), -- CPR Start Date 
+	to_date('20070630', 'yyyymmdd'), -- CPR End Date
+	16942,  -- Submission Number
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	null,
+	null,
+	null,
+	null, 
+	null,
+	326492,  -- Number of lines that will be in the CPR
+	null,
+	null,
+	null);
+
+--1 records inserted
+
+
+
+
+
+---------------------------                 -------------------------------------
+Select all DFLT_PRODUCT_CODE, Count(DFLT_PRODUCT_CODE) as product_code
+  from RUPSNCPDP_DETAIL_SCRIPT
+  WHERE CPR_NUM = 81577
+  AND HFLT_HDR_NUM = 19676
+  AND DFLT_PRODUCT_CODE NOT IN('00186037020' , '00186037220')
+  group by rollup(DFLT_PRODUCT_CODE);
+
+---------------------------                 -------------------------------------
+
+
+
+********************************* SQL SAMPLE CODE **************************************
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER5 = 'BAD RX'
+WHERE HFLT_HDR_NUM IN (17491)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+-- 117 rows updated
+
+	
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET DFLT_CUSTOM_FILLER5 = 'BAD RX'
+WHERE
+	HFLT_HDR_NUM IN (17500)
+and length(translate(trim(DFLT_PRESCRIPTION_NUM),' +-.0123456789',' ')) > 0;
+-- 26 rows updated
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17493;
+-- 97166 rows updated
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17496;
+-- 126396 rows updated
+
+
+UPDATE rupsncpdp_detail_script
+SET DFLT_PRESCRIPTION_NUM = lpad(DFLT_PRESCRIPTION_NUM, 7, 0)
+WHERE hflt_hdr_num = 17500;
+-- 213034 rows updated
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+       SUBM_HDR_NUM = 16069,	
+        HFLT_HDR_NUM = 17472	
+WHERE HFLT_HDR_NUM = 17473
+   AND   SUBM_HDR_NUM  = 16071;
+   
+--Total of 52511 rows updated
+
+
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+UPDATE RUPSNCPDP_DETAIL_SCRIPT
+SET 
+       SUBM_HDR_NUM = 16069,	
+        HFLT_HDR_NUM = 17472	
+WHERE HFLT_HDR_NUM = 17470
+   AND   SUBM_HDR_NUM  = 16070;
+   
+--Total of 2078 rows updated
+
+
+
+********************************************************************************
+
+
+
+SELECT count (*),   DFLT_PLAN_ID_CODE                                                            	
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT                              
+WHERE  HFLT_HDR_NUM =  18380 and DFLT_FORMULARY_CODE = 044                              
+GROUP BY  DFLT_PLAN_ID_CODE;
+
+
+
+SELECT (*)                                                            	
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT                              
+WHERE  HFLT_HDR_NUM =  18380 and DFLT_FORMULARY_CODE = 044
+GROUP BY  DFLT_PLAN_ID_CODE;
+
+
+
+__________________________________________________________
+
+
+
+SELECT DFLT_PLAN_ID_CODE                                                         	
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT                              
+WHERE  HFLT_HDR_NUM =  18380 and DFLT_FORMULARY_CODE > 001                              
+GROUP BY  DFLT_PLAN_ID_CODE;
+
+
+
+----------------------------------------------------------
+
+
+
+
+SELECT DFLT_PLAN_ID_CODE, DFLT_FORMULARY_CODE                                                         	
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT                              
+WHERE  HFLT_HDR_NUM =  18389 and DFLT_PLAN_ID_CODE = 'R'                               
+GROUP BY  DFLT_PLAN_ID_CODE;
+
+------------------------------------------------------------
+SELECT count(*), DFLT_PLAN_ID_CODE, DFLT_FORMULARY_CODE                                                         	
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT                              
+WHERE  HFLT_HDR_NUM = 18389 and DFLT_PLAN_ID_CODE = 'R';                               
+
+GROUP BY  DFLT_PLAN_ID_CODE, DFLT_FORMULARY_CODE
+
+---------------------------------------------------------------
+
+SELECT count(*), DFLT_PLAN_ID_CODE, DFLT_FORMULARY_CODE                                                         	
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT                              
+WHERE  HFLT_HDR_NUM = 18389 and DFLT_PLAN_ID_CODE = 'R'
+       or HFLT_HDR_NUM = 18389 and DFLT_PLAN_ID_CODE = 'M'                               
+
+GROUP BY  DFLT_PLAN_ID_CODE, DFLT_FORMULARY_CODE;
+
+
+-------------------------------------------------------------
+
+SELECT  count(*), DFLT_PLAN_ID_CODE, DFLT_FORMULARY_CODE                                                          	
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT                              
+WHERE  HFLT_HDR_NUM =  18380 and DFLT_FORMULARY_CODE = 044
+GROUP BY  DFLT_PLAN_ID_CODE;
+
+-------------------------------------------------------------
+
+SELECT  count(*), DFLT_PLAN_ID_CODE, DFLT_FORMULARY_CODE                                                          	
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT                              
+WHERE  HFLT_HDR_NUM =  18393 
+GROUP BY ROLLUP (DFLT_PLAN_ID_CODE, DFLT_FORMULARY_CODE);
+
+
+
+----------------------------------------------------------
+
+
+SELECT  count(*), DFLT_PLAN_ID_CODE, DFLT_FORMULARY_CODE                                                          	
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT                              
+WHERE  HFLT_HDR_NUM =  18389 
+GROUP BY ROLLUP (DFLT_PLAN_ID_CODE, DFLT_FORMULARY_CODE);
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+SELECT (*)                                                            	
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT                              
+WHERE  HFLT_HDR_NUM =  18356 and DFLT_FORMULARY_CODE = 1020
+
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------                 -------------------------------------
+---------------------------   Jenny          -------------------------------------
+SELECT
+	V.DETAIL_NUM,
+	V.ERROR_NUM,
+	V.ERROR_DESC,
+	V.ERROR_STATUS,
+	V.LINE_ACTION,
+	V.SUBM_DESCRIPTION,
+	V.PRODUCT,
+	V.NDC,
+	V.NABP,
+	I.NAME,
+	s.SUBMITTED_PRESCRIPTION_NUM RX_NUM,
+	V.FILLED_DATE,
+	V.UNITS,
+	V.PLAN_ID_CODE,
+		V.PLAN_NAME,
+	substr(s.dflt_claim_num,11,10) || substr(s.dflt_future_use, 1,10) GID,
+	V.REFILL_NUM,
+	V.NUM_RX,
+	V.SUBM_HDR_NUM,
+	V.CPR_NUM
+FROM
+	V_RPT_ERROR_DETAIL_RX V,
+	RUPSNCPDP_DETAIL_SCRIPT S,
+	INDUSTRY_IDENTIFIER I
+WHERE
+		v.detail_num = s.hflt_detail_num
+	AND	v.nabp = i.identifier (+)
+	AND i.identifier_type_code (+) = 'NABP'
+	AND v.subm_hdr_num = 18339
+	AND	V.ERROR_NUM NOT in (30007)
+	AND	v.line_action ='Rejected'
+
+
+
+
+
+
+
+
+
+
+
+---------------------------                 -------------------------------------
+SELECT
+	DFLT_STATUS_NUM,
+	HFLT_DETAIL_NUM,
+	HFLT_HDR_NUM,
+	USERID,
+	LASTMOD,
+	DFLT_REC_TYPE,
+	DFLT_LINE_NUMBER,
+	DFLT_DATA_LEVEL,
+	DFLT_PLAN_ID_QUALIFIER,
+	DFLT_PLAN_ID_CODE,
+	DFLT_PLAN_NAME,
+	DFLT_PHARM_ID_QUALIFIER,
+	DFLT_PHARM_ID_CODE,
+	DFLT_PHARM_ZIP_CODE,
+	DFLT_PRODUCT_CODE_QUALIFIER,
+	DFLT_PRODUCT_CODE,
+	DFLT_PRODUCT_DESC,
+	DFLT_DISPENSED_AS_WRITTEN,
+	DFLT_TOT_METRIC_QTY,
+	DFLT_TOT_METRIC_QTY_SIGN,
+	DFLT_UOM,
+	DFLT_DOSAGE_FORM_ID,
+	DFLT_DIAGNOSIS_CODE,
+	DFLT_DAYS_SUPPLY,
+	DFLT_DAYS_SUPPLY_SIGN,
+	DFLT_PRESCRIPTION_TYPE,
+	DFLT_PRESCRIPTION_TYPE_SIGN,
+	DFLT_TOT_NUM_PRESCRIPTIONS,
+	DFLT_NUM_PRESCRIPTIONS_SIGN,
+	DFLT_PRESCRIPTION_NUM,
+	DFLT_DATE_FILLED,
+	DFLT_DATE_REIMBURSED,
+	DFLT_THERAPEUTIC_CLASS_CODE_ID,
+	DFLT_THERP_CLASS_CODE,
+	DFLT_THERP_CLASS_DESC,
+	DFLT_PLAN_REIM_QUALIFIED,
+	DFLT_PLAN_REIM_AMT,
+	DFLT_PLAN_REIM_AMT_SIGN,
+	DFLT_PATIENT_LIAB_AMT,
+	DFLT_PATIENT_LIAB_AMT_SIGN,
+	DFLT_NEW_REFIL_CODE,
+	DFLT_RECORD_PURPOSE_IND,
+	DFLT_RBT_PER_UNIT_AMT,
+	DFLT_RBT_PER_UNIT_AMT_SIGN,
+	DFLT_REQUESTED_REBATE_AMT,
+	DFLT_REQUESTED_RBT_AMT_SIGN,
+	DFLT_FORMULARY_CODE,
+	DFLT_PRESCRIBER_ID_QUALIFIER,
+	DFLT_PRESCRIBER_ID_CODE,
+	DFLT_ENCRYPTED_PATIENT_ID,
+	DFLT_CLAIM_NUM,
+	DFLT_FUTURE_USE,
+	DFLT_PCS_PROMOTED_TYPE_IND,
+	DFLT_PCS_NASAQ_DUPLICATE_COMP,
+	DFLT_USER_ACTION,
+	DFLT_SUBMITTED_UNITS,
+	CPR_NUM,
+	DFLT_PROMO_REB_IND,
+	DFLT_CUSTOM_SUM_FIELD,
+	RUPSCM_SUMMARY_NUM,
+	SUBM_HDR_NUM,
+	DFLT_CUSTOM_FILLER1,
+	DFLT_CUSTOM_FILLER2,
+	DFLT_CUSTOM_FILLER3,
+	DFLT_CUSTOM_FILLER4,
+	DFLT_CUSTOM_FILLER5,
+	FILE_RECNUM,
+	CM_PLAN_ID,
+	CM_PRODUCT_ID,
+	CM_SUBGROUP_ID,
+	PASS2_IND,
+	SUBMITTED_PHARM_ID_QUALIFIER,
+	SUBMITTED_PHARM_ID_CODE,
+	SUBMITTED_PHARM_ZIP_CODE,
+	SUBMITTED_PRESCRIPTION_NUM,
+	DFLT_STATE_REIMB_AMT,
+	DFLT_THIRD_PARTY_LIAB,
+	DFLT_STATE_REIMB_AMT_SIGN,
+	DFLT_THIRD_PARTY_LIAB_SIGN,
+	SUBMITTED_DATA_LEVEL,
+	SUBMITTED_PLAN_ID_CODE,
+	SUBMITTED_PRODUCT_CODE,
+	SUBMITTED_TOT_NUM_PRESCRIPTION,
+	SUBMITTED_DATE_FILLED,
+	SUBMITTED_NEW_REFIL_CODE,
+	SUBMITTED_FORMULARY_CODE,
+	MAIL_UNITS,
+	RETAIL_UNITS
+FROM
+	RUPSNCPDP_DETAIL_SCRIPT
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
